@@ -1,58 +1,1847 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#10243e"><title>Kandia — O próximo passo começa aqui</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--navy:#10243e;--navy2:#183858;--green:#23b875;--green-dark:#138b58;--mint:#e8f8f0;--ink:#182b40;--muted:#738195;--line:#e7ecf1;--bg:#f5f7fa;--white:#fff;--amber:#f4a62a;--red:#e45d66;--shadow:0 8px 24px rgba(16,36,62,.055);--radius:16px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #83d9b0;outline-offset:2px}.app{min-height:100vh}.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:20;padding:0 max(24px,calc((100vw - 1240px)/2));gap:32px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:22px;letter-spacing:-1px;white-space:nowrap}.brand-mark{width:35px;height:35px;border-radius:11px;background:var(--green);display:grid;place-items:center;color:white;font-size:20px;font-weight:800}.topsearch{display:flex;align-items:center;gap:9px;background:#f4f6f8;border:1px solid transparent;border-radius:12px;padding:0 14px;height:42px;max-width:350px;flex:1;color:var(--muted)}.topsearch input{border:0;background:transparent;outline:0;width:100%;min-width:0}.desktop-links{display:flex;align-items:center;gap:8px;margin-left:auto;height:100%}.navlink{height:100%;display:flex;align-items:center;gap:8px;padding:0 13px;border:0;background:transparent;color:#6f7e90;font-weight:600;position:relative}.navlink.active{color:var(--navy)}.navlink.active:after{content:"";position:absolute;bottom:0;left:12px;right:12px;height:3px;border-radius:4px 4px 0 0;background:var(--green)}.top-actions{display:flex;align-items:center;gap:14px}.iconbtn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:#66768a;position:relative}.dot{position:absolute;right:7px;top:7px;width:7px;height:7px;background:var(--green);border:2px solid white;border-radius:50%}.avatar{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-weight:800;color:#22513d;background:#d8f2e5;flex:none;overflow:hidden}.avatar.orange{background:#ffead5;color:#8a5421}.avatar.blue{background:#e1eaff;color:#3659a3}.avatar.purple{background:#eee5ff;color:#6947a7}.layout{max-width:1240px;margin:28px auto 0;padding:0 24px 48px;display:grid;grid-template-columns:228px minmax(0,1fr) 286px;gap:24px;align-items:start}.sidebar{position:sticky;top:96px}.side-card,.card{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.side-profile{padding:20px 16px;text-align:center}.side-profile .avatar{width:58px;height:58px;margin:0 auto 12px;font-size:18px}.side-profile h3{font-size:14px;margin:0 0 5px}.muted{color:var(--muted)}.small{font-size:12px}.profile-progress{height:5px;background:#edf1f4;border-radius:5px;margin:14px 0 8px;overflow:hidden}.profile-progress span{display:block;height:100%;background:var(--green);width:72%;border-radius:5px}.side-menu{padding:10px;margin-top:14px}.side-item{width:100%;display:flex;align-items:center;gap:12px;padding:12px;border:0;border-radius:11px;background:transparent;color:#5f6f82;text-align:left;font-weight:600;margin:2px 0}.side-item .ico{width:21px;text-align:center;font-size:17px}.side-item.active{background:var(--mint);color:var(--green-dark)}.side-item:hover{background:#f5f8fa}.side-tip{padding:17px;margin-top:14px;background:var(--navy);color:white;border-radius:var(--radius)}.side-tip p{color:#c2ceda;line-height:1.55;font-size:12px}.side-tip button{background:var(--green);color:#fff;border:0;padding:10px 12px;border-radius:9px;width:100%;font-weight:700}.main{min-width:0}.page-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 20px}.page-heading h1{font-size:25px;letter-spacing:-.8px;margin:0 0 7px;color:var(--navy)}.page-heading p{margin:0;color:var(--muted);line-height:1.5}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s;white-space:nowrap}.btn-primary{background:var(--green);color:white;box-shadow:0 4px 10px #23b87522}.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}.btn-outline{background:#fff;border:1px solid #dce4eb;color:var(--navy)}.btn-soft{background:var(--mint);color:var(--green-dark)}.btn-sm{padding:8px 11px;font-size:12px;border-radius:9px}.composer{padding:16px;margin-bottom:16px}.composer-top{display:flex;gap:12px;align-items:center}.composer-prompt{border:1px solid var(--line);border-radius:24px;background:#f7f9fb;text-align:left;padding:13px 16px;color:#8290a0;flex:1}.composer-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:15px;padding-top:12px}.composer-tool{border:0;background:transparent;color:#718094;display:flex;gap:7px;align-items:center;padding:6px;font-weight:600;font-size:12px}.feed-post{padding:20px;margin-bottom:16px}.post-head{display:flex;align-items:center;gap:11px}.company-logo{width:43px;height:43px;border-radius:13px;background:#e4f4ec;color:#1e754e;font-size:13px;font-weight:800;display:grid;place-items:center;flex:none}.company-logo.orange{background:#fff0df;color:#a75c13}.company-logo.blue{background:#e5edff;color:#365aa3}.company-logo.purple{background:#efe6ff;color:#7047ac}.post-meta{min-width:0;flex:1}.post-meta strong{font-size:14px;display:block;margin-bottom:4px}.post-meta span{font-size:11px;color:var(--muted)}.more{border:0;background:transparent;color:#8995a3;font-size:21px}.post-copy{font-size:13px;line-height:1.75;margin:16px 0;color:#394b5e;white-space:pre-line}.post-image{width:100%;height:188px;border-radius:13px;background:linear-gradient(115deg,#e4f5ed,#cce8da);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:24px;margin-bottom:14px}.post-image.tech{background:linear-gradient(115deg,#e5ebfb,#cad8f5)}.post-image.warm{background:linear-gradient(115deg,#fff0df,#f5d9b9)}.image-copy{max-width:62%;z-index:1}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;font-weight:800;color:var(--green-dark)}.image-copy h3{font-size:21px;line-height:1.2;letter-spacing:-.6px;color:var(--navy);margin:8px 0}.image-copy p{font-size:12px;line-height:1.5;color:#526578;margin:0}.abstract-art{width:132px;height:132px;border-radius:32px;background:#fff8;transform:rotate(-12deg);display:grid;place-items:center;font-size:48px;box-shadow:0 16px 40px #18385815}.opportunity-preview{border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px;margin:14px 0}.opp-info{min-width:0;flex:1}.opp-info strong{display:block;font-size:13px;margin-bottom:6px}.opp-info span{font-size:11px;color:var(--muted)}.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.tag{font-size:10px;font-weight:700;padding:6px 9px;border-radius:7px;background:#f0f4f7;color:#5c6c7f}.tag.green{background:var(--mint);color:var(--green-dark)}.post-stats{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);padding:12px 0;border-bottom:1px solid var(--line)}.post-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 0 0}.post-action{border:0;background:transparent;border-radius:9px;padding:10px;color:#738195;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700}.post-action:hover{background:#f5f8fa}.post-action.liked{color:var(--green-dark);background:var(--mint)}.comments{padding-top:9px}.comment{display:flex;gap:9px;margin-top:12px}.comment .avatar{width:31px;height:31px;font-size:10px}.comment-body{background:#f4f6f8;border-radius:0 12px 12px 12px;padding:10px 12px;flex:1;min-width:0}.comment-body strong{font-size:11px}.comment-body p{font-size:12px;line-height:1.5;margin:5px 0 0;color:#506175}.comment-time{font-size:10px;color:#8996a4;margin-left:7px;font-weight:400}.comment-form{display:flex;align-items:center;gap:8px;margin-top:13px}.comment-form input{flex:1;min-width:0;border:1px solid var(--line);background:#f9fafb;border-radius:20px;padding:11px 14px;font-size:12px;outline:0}.send{width:36px;height:36px;border:0;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center}.right-card{padding:18px;margin-bottom:14px}.right-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.right-title h3{font-size:13px;margin:0}.text-link{border:0;background:transparent;color:var(--green-dark);font-weight:700;font-size:11px}.suggestion{display:flex;align-items:center;gap:10px;margin:14px 0}.suggestion .avatar{width:38px;height:38px;font-size:11px}.suggestion-info{min-width:0;flex:1}.suggestion-info strong{font-size:12px;display:block;margin-bottom:4px}.suggestion-info span{font-size:10px;color:var(--muted)}.add{border:1px solid #cfe8da;background:#f2fbf6;color:var(--green-dark);width:30px;height:30px;border-radius:9px;font-size:18px}.mini-internship{padding:12px 0;border-top:1px solid var(--line)}.mini-internship:first-of-type{border-top:0}.mini-internship strong{display:block;font-size:12px;margin:7px 0}.mini-internship span{font-size:10px;color:var(--muted)}.mini-internship .tag{display:inline-block;margin-top:8px}.footer-note{font-size:10px;line-height:1.8;color:#98a3b0;padding:4px 4px}.mobile-nav{display:none}.view{display:none}.view.active{display:block}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}.search-field{height:43px;display:flex;align-items:center;gap:9px;padding:0 13px;border:1px solid var(--line);border-radius:11px;background:#fff;flex:1;min-width:190px}.search-field input{border:0;outline:0;width:100%;min-width:0}.filter-select{height:43px;border:1px solid var(--line);border-radius:11px;background:white;color:#607085;padding:0 12px;max-width:150px}.results-line{display:flex;align-items:center;justify-content:space-between;margin:18px 0 12px;color:var(--muted);font-size:12px}.internship-card{padding:17px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}.internship-card .company-logo{width:49px;height:49px}.internship-content{flex:1;min-width:0}.internship-content h3{font-size:15px;margin:2px 0 7px;color:var(--navy)}.internship-content .company-name{font-size:12px;color:#68788b}.internship-content .tag-row{margin:11px 0}.internship-side{display:flex;flex-direction:column;align-items:flex-end;gap:12px}.deadline{font-size:11px;color:#7e8a98;white-space:nowrap}.deadline strong{color:#bd7b16}.detail-card{padding:24px}.detail-hero{display:flex;gap:15px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:22px}.detail-hero .company-logo{width:60px;height:60px;font-size:17px}.detail-hero h1{font-size:24px;letter-spacing:-.8px;margin:2px 0 8px}.detail-hero p{color:var(--muted);margin:0;font-size:12px}.detail-hero .btn{margin-left:auto}.detail-stats{display:flex;gap:20px;flex-wrap:wrap;padding:17px 0;color:#627287;font-size:12px}.detail-section{margin-top:22px}.detail-section h3{font-size:15px;margin:0 0 12px}.detail-section p,.detail-section li{font-size:13px;color:#596a7c;line-height:1.8}.detail-section ul{padding-left:20px}.skill{display:inline-flex;background:var(--mint);color:var(--green-dark);padding:8px 10px;border-radius:8px;font-size:11px;font-weight:700;margin:0 5px 6px 0}.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}.kpi{padding:17px;min-width:0}.kpi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.kpi-icon{width:34px;height:34px;border-radius:10px;background:#e7f8ef;color:var(--green-dark);display:grid;place-items:center;font-size:17px}.kpi-icon.blue{background:#eaf0ff;color:#4266bd}.kpi-icon.orange{background:#fff2df;color:#b47a1b}.kpi-icon.purple{background:#f1eaff;color:#8059bb}.kpi-value{font-size:26px;font-weight:800;letter-spacing:-1px;color:var(--navy)}.kpi-label{font-size:11px;color:var(--muted);line-height:1.4;margin-top:5px}.dashboard-section{padding:20px;margin-bottom:16px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.section-head h3{margin:0;font-size:15px}.table-wrap{overflow-x:auto}.data-table{border-collapse:collapse;width:100%;min-width:500px}.data-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#8995a3;font-weight:700;padding:12px 10px;border-bottom:1px solid var(--line)}.data-table td{padding:14px 10px;border-bottom:1px solid #eff2f5;font-size:12px}.data-table tr:last-child td{border-bottom:0}.status{display:inline-flex;padding:6px 9px;border-radius:7px;font-size:10px;font-weight:700;white-space:nowrap;background:#fff3dc;color:#a36b13}.status.green{background:var(--mint);color:var(--green-dark)}.status.blue{background:#eaf0ff;color:#4666b2}.status.gray{background:#eff2f5;color:#657386}.status.red{background:#ffebec;color:#bb4e57}.profile-cover{height:132px;border-radius:16px 16px 0 0;background:linear-gradient(110deg,#10243e,#254f69 65%,#23b875);position:relative;overflow:hidden}.profile-cover:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #ffffff25;border-radius:50%;right:10%;top:-130px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 70px #ffffff08}.profile-main{padding:0 24px 24px}.profile-header{display:flex;align-items:flex-end;gap:16px;margin-top:-34px;position:relative}.profile-header .avatar{width:82px;height:82px;border:5px solid white;font-size:24px}.profile-header h1{font-size:21px;margin:0 0 6px}.profile-header p{font-size:12px;color:var(--muted);margin:0 0 5px}.profile-header .btn{margin-left:auto;margin-bottom:7px}.profile-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.info-panel{padding:20px}.info-panel h3{font-size:14px;margin:0 0 16px}.info-row{margin:14px 0}.info-row label{font-size:10px;color:#8a97a6;display:block;margin-bottom:6px}.info-row strong{font-size:12px;font-weight:600}.skill-list{display:flex;gap:7px;flex-wrap:wrap}.empty-state{text-align:center;padding:46px 20px}.empty-icon{width:60px;height:60px;background:var(--mint);color:var(--green-dark);display:grid;place-items:center;border-radius:18px;margin:0 auto 15px;font-size:25px}.empty-state h3{font-size:16px;margin:0 0 8px}.empty-state p{font-size:12px;color:var(--muted);margin:0 0 18px;line-height:1.6}.toast{position:fixed;z-index:100;bottom:92px;left:50%;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:13px 18px;border-radius:12px;box-shadow:0 10px 35px #10243e30;font-size:12px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100vw - 30px)}.toast.show{opacity:1;transform:translate(-50%,0)}.modal-backdrop{position:fixed;inset:0;background:#10243e80;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.modal{background:#fff;border-radius:18px;width:min(540px,100%);max-height:90vh;overflow:auto;padding:24px;box-shadow:0 24px 80px #0c203340}.modal h2{font-size:20px;color:var(--navy);margin:0 0 7px}.modal p{color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 20px}.field{display:block;margin:14px 0}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dce4eb;border-radius:10px;padding:12px;background:white;outline:0;color:var(--ink)}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green)}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.auth-screen{min-height:100vh;display:none;background:#fff}.auth-screen.active{display:grid;grid-template-columns: .9fr 1.1fr}.auth-aside{background:var(--navy);color:white;padding:48px;display:flex;flex-direction:column;justify-content:space-between;min-height:100vh;position:relative;overflow:hidden}.auth-aside:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #ffffff1c;border-radius:50%;right:-150px;bottom:4%;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}.auth-aside .brand{color:white}.auth-aside h1{font-size:38px;letter-spacing:-1.8px;line-height:1.15;max-width:440px;margin:0 0 18px}.auth-aside p{color:#c4d0dc;line-height:1.8;max-width:410px}.auth-aside .green-text{color:#4ee09b}.auth-quote{font-size:12px;color:#aab9c8;position:relative;z-index:1}.auth-main{padding:36px 24px;display:flex;align-items:center;justify-content:center}.auth-form{width:min(420px,100%)}.auth-form h2{font-size:27px;letter-spacing:-.8px;margin:0 0 8px;color:var(--navy)}.auth-form>p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 26px}.auth-switch{display:flex;gap:8px;background:#f1f4f6;padding:5px;border-radius:11px;margin:18px 0}.auth-switch button{flex:1;border:0;border-radius:8px;padding:11px;background:transparent;color:#718094;font-weight:700}.auth-switch button.selected{background:white;color:var(--navy);box-shadow:0 2px 7px #10243e0c}.auth-bottom{text-align:center;font-size:12px;color:var(--muted);margin-top:20px}.auth-bottom button{border:0;background:transparent;color:var(--green-dark);font-weight:700}.hidden{display:none!important}
-@media(max-width:1100px){.layout{grid-template-columns:210px minmax(0,1fr);gap:18px}.right-rail{display:none}.topbar{gap:20px}.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){body{font-size:13px}.topbar{height:60px;padding:0 16px;gap:12px}.brand{font-size:20px}.brand-mark{width:32px;height:32px}.topsearch{display:none}.desktop-links{display:none}.top-actions{margin-left:auto;gap:8px}.top-actions .iconbtn:first-child{display:none}.top-actions .avatar{width:34px;height:34px}.layout{display:block;margin:0;padding:18px 12px calc(100px + env(safe-area-inset-bottom));max-width:620px}.sidebar{display:none}.page-heading{margin:5px 2px 17px}.page-heading h1{font-size:23px}.page-heading p{font-size:12px}.feed-post{padding:15px;margin-bottom:12px;border-radius:14px}.composer{padding:14px;margin-bottom:12px}.composer-bottom{margin-top:12px}.composer-tool{font-size:11px}.post-copy{font-size:13px;margin:13px 0}.post-image{height:160px;padding:18px}.image-copy h3{font-size:18px}.abstract-art{width:94px;height:94px;font-size:35px;border-radius:24px}.opportunity-preview{padding:11px;gap:9px}.opportunity-preview .btn{padding:8px;font-size:11px}.post-actions{gap:4px}.post-action{padding:11px 4px;font-size:12px}.mobile-nav{position:fixed;z-index:30;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);height:calc(66px + env(safe-area-inset-bottom));padding:6px 5px calc(7px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(18px);border-top:1px solid var(--line)}.mobile-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:0;background:transparent;color:#8a97a6;font-size:9px;font-weight:700;position:relative}.mobile-nav button .mobile-ico{font-size:20px;line-height:1}.mobile-nav button.active{color:var(--green-dark)}.mobile-nav button.active:before{content:"";position:absolute;top:0;width:26px;height:3px;background:var(--green);border-radius:0 0 4px 4px}.filters{gap:7px}.search-field{min-width:100%;flex:none}.filter-select{flex:1;max-width:none;min-width:calc(50% - 5px)}.internship-card{padding:14px;gap:10px}.internship-card .company-logo{width:42px;height:42px}.internship-content h3{font-size:13px;line-height:1.4}.internship-side{align-items:flex-start}.internship-side .btn{font-size:11px;padding:8px}.deadline{white-space:normal;line-height:1.5}.tag{font-size:10px}.detail-card{padding:17px}.detail-hero{flex-wrap:wrap}.detail-hero h1{font-size:21px}.detail-hero .btn{margin-left:0;width:100%}.detail-stats{gap:12px}.kpi-grid{gap:9px;margin-bottom:13px}.kpi{padding:13px}.kpi-icon{width:30px;height:30px}.kpi-value{font-size:23px}.kpi-label{font-size:10px}.dashboard-section{padding:14px}.profile-header{align-items:flex-start;flex-wrap:wrap;gap:11px}.profile-header .avatar{width:70px;height:70px}.profile-header h1{font-size:18px}.profile-header .btn{margin:0 0 0 auto}.profile-main{padding:0 16px 18px}.profile-columns{grid-template-columns:1fr}.auth-screen.active{grid-template-columns:1fr}.auth-aside{display:none}.auth-main{padding:28px 22px;align-items:flex-start}.auth-form{padding-top:20px}.toast{bottom:calc(80px + env(safe-area-inset-bottom))}.modal{padding:20px}.profile-cover{height:112px}}
-@media(min-width:761px) and (max-width:900px){.layout{padding:0 16px;margin-top:20px}.topbar{padding:0 16px}.navlink{padding:0 8px;font-size:12px}.top-actions{gap:7px}}
-</style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10243e">
+  <title>Kandia — O próximo passo começa aqui</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --navy: #10243e;
+      --navy2: #183858;
+      --green: #23b875;
+      --green-dark: #138b58;
+      --mint: #e8f8f0;
+      --ink: #182b40;
+      --muted: #738195;
+      --line: #e7ecf1;
+      --bg: #f5f7fa;
+      --white: #fff;
+      --amber: #f4a62a;
+      --red: #e45d66;
+      --shadow: 0 8px 24px rgba(16, 36, 62, .055);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #83d9b0;
+      outline-offset: 2px;
+    }
+
+    .app { min-height: 100vh; }
+
+    .topbar {
+      height: 72px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 0 max(24px, calc((100vw - 1240px) / 2));
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 22px;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .topsearch {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: #f4f6f8;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 0 14px;
+      height: 42px;
+      max-width: 350px;
+      flex: 1;
+      color: var(--muted);
+    }
+
+    .topsearch input {
+      border: 0;
+      background: transparent;
+      outline: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .desktop-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      height: 100%;
+    }
+
+    .navlink {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 13px;
+      border: 0;
+      background: transparent;
+      color: #6f7e90;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .navlink.active { color: var(--navy); }
+
+    .navlink.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 12px;
+      right: 12px;
+      height: 3px;
+      border-radius: 4px 4px 0 0;
+      background: var(--green);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .iconbtn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: #66768a;
+      position: relative;
+    }
+
+    .dot {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-weight: 800;
+      color: #22513d;
+      background: #d8f2e5;
+      flex: none;
+      overflow: hidden;
+    }
+
+    .avatar.orange { background: #ffead5; color: #8a5421; }
+    .avatar.blue { background: #e1eaff; color: #3659a3; }
+    .avatar.purple { background: #eee5ff; color: #6947a7; }
+
+    .layout {
+      max-width: 1240px;
+      margin: 28px auto 0;
+      padding: 0 24px 48px;
+      display: grid;
+      grid-template-columns: 228px minmax(0, 1fr) 286px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .sidebar { position: sticky; top: 96px; }
+
+    .side-card, .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .side-profile { padding: 20px 16px; text-align: center; }
+
+    .side-profile .avatar {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      font-size: 18px;
+    }
+
+    .side-profile h3 { font-size: 14px; margin: 0 0 5px; }
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; }
+
+    .profile-progress {
+      height: 5px;
+      background: #edf1f4;
+      border-radius: 5px;
+      margin: 14px 0 8px;
+      overflow: hidden;
+    }
+
+    .profile-progress span {
+      display: block;
+      height: 100%;
+      background: var(--green);
+      width: 72%;
+      border-radius: 5px;
+    }
+
+    .side-menu { padding: 10px; margin-top: 14px; }
+
+    .side-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 0;
+      border-radius: 11px;
+      background: transparent;
+      color: #5f6f82;
+      text-align: left;
+      font-weight: 600;
+      margin: 2px 0;
+    }
+
+    .side-item .ico { width: 21px; text-align: center; font-size: 17px; }
+    .side-item.active { background: var(--mint); color: var(--green-dark); }
+    .side-item:hover { background: #f5f8fa; }
+
+    .side-tip {
+      padding: 17px;
+      margin-top: 14px;
+      background: var(--navy);
+      color: white;
+      border-radius: var(--radius);
+    }
+
+    .side-tip p { color: #c2ceda; line-height: 1.55; font-size: 12px; }
+
+    .side-tip button {
+      background: var(--green);
+      color: #fff;
+      border: 0;
+      padding: 10px 12px;
+      border-radius: 9px;
+      width: 100%;
+      font-weight: 700;
+    }
+
+    .main { min-width: 0; }
+
+    .page-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 20px;
+    }
+
+    .page-heading h1 {
+      font-size: 25px;
+      letter-spacing: -.8px;
+      margin: 0 0 7px;
+      color: var(--navy);
+    }
+
+    .page-heading p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .18s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 4px 10px #23b87522;
+    }
+
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-outline { background: #fff; border: 1px solid #dce4eb; color: var(--navy); }
+    .btn-soft { background: var(--mint); color: var(--green-dark); }
+    .btn-sm { padding: 8px 11px; font-size: 12px; border-radius: 9px; }
+
+    .post-composer { padding: 16px; margin-bottom: 16px; }
+    .composer-top { display: flex; align-items: center; gap: 12px; }
+    .composer-prompt { flex: 1; text-align: left; border: 1px solid var(--line); background: #f7f9fb; color: #748294; border-radius: 24px; padding: 12px 16px; font: inherit; cursor: pointer; }
+    .composer-actions { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; }
+    .composer-action { border: 0; background: transparent; color: #5f6e7f; border-radius: 8px; padding: 9px 10px; font: inherit; font-weight: 700; cursor: pointer; }
+    .composer-action:hover { background: #f1f5f8; }
+    .composer-share { margin-left: auto; padding: 9px 16px; }
+    @media (max-width: 760px) { .post-composer { padding: 13px; margin-bottom: 12px; } .composer-actions { gap: 4px; } .composer-action { padding: 9px 6px; font-size: 11px; } .composer-share { padding: 8px 11px; font-size: 11px; } .mobile-nav { grid-template-columns: repeat(5, 1fr); } }
+
+    /* Publicações do feed */
+    .feed-post { padding: 20px; margin-bottom: 16px; }
+
+    .post-head { display: flex; align-items: center; gap: 11px; }
+
+    .company-logo {
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      background: #e4f4ec;
+      color: #1e754e;
+      font-size: 13px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+
+    .company-logo.orange { background: #fff0df; color: #a75c13; }
+    .company-logo.blue { background: #e5edff; color: #365aa3; }
+    .company-logo.purple { background: #efe6ff; color: #7047ac; }
+
+    .post-meta { min-width: 0; flex: 1; }
+    .post-meta strong { font-size: 14px; display: block; margin-bottom: 4px; }
+    .post-meta span { font-size: 11px; color: var(--muted); }
+    .more { border: 0; background: transparent; color: #8995a3; font-size: 21px; }
+
+    .post-copy {
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 16px 0;
+      color: #394b5e;
+      white-space: pre-line;
+    }
+
+    .post-image {
+      width: 100%;
+      height: 188px;
+      border-radius: 13px;
+      background: linear-gradient(115deg, #e4f5ed, #cce8da);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+      margin-bottom: 14px;
+    }
+
+    .post-image.tech { background: linear-gradient(115deg, #e5ebfb, #cad8f5); }
+    .post-image.warm { background: linear-gradient(115deg, #fff0df, #f5d9b9); }
+    .image-copy { max-width: 62%; z-index: 1; }
+
+    .eyebrow {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .image-copy h3 { font-size: 21px; line-height: 1.2; letter-spacing: -.6px; color: var(--navy); margin: 8px 0; }
+    .image-copy p { font-size: 12px; line-height: 1.5; color: #526578; margin: 0; }
+
+    .abstract-art {
+      width: 132px;
+      height: 132px;
+      border-radius: 32px;
+      background: #fff8;
+      transform: rotate(-12deg);
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+      box-shadow: 0 16px 40px #18385815;
+    }
+
+    .opportunity-preview {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .opp-info { min-width: 0; flex: 1; }
+    .opp-info strong { display: block; font-size: 13px; margin-bottom: 6px; }
+    .opp-info span { font-size: 11px; color: var(--muted); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 6px 9px;
+      border-radius: 7px;
+      background: #f0f4f7;
+      color: #5c6c7f;
+    }
+
+    .tag.green { background: var(--mint); color: var(--green-dark); }
+
+    .post-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 0 0; }
+
+    .post-action {
+      border: 0;
+      background: transparent;
+      border-radius: 9px;
+      padding: 10px;
+      color: #738195;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .post-action:hover { background: #f5f8fa; }
+    .post-action.liked { color: var(--green-dark); background: var(--mint); }
+    .comments { padding-top: 9px; }
+    .comment { display: flex; gap: 9px; margin-top: 12px; }
+    .comment .avatar { width: 31px; height: 31px; font-size: 10px; }
+
+    .comment-body {
+      background: #f4f6f8;
+      border-radius: 0 12px 12px 12px;
+      padding: 10px 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .comment-body strong { font-size: 11px; }
+    .comment-body p { font-size: 12px; line-height: 1.5; margin: 5px 0 0; color: #506175; }
+    .comment-time { font-size: 10px; color: #8996a4; margin-left: 7px; font-weight: 400; }
+
+    .comment-form { display: flex; align-items: center; gap: 8px; margin-top: 13px; }
+
+    .comment-form input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      border-radius: 20px;
+      padding: 11px 14px;
+      font-size: 12px;
+      outline: 0;
+    }
+
+    .send {
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .right-card { padding: 18px; margin-bottom: 14px; }
+    .right-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .right-title h3 { font-size: 13px; margin: 0; }
+    .text-link { border: 0; background: transparent; color: var(--green-dark); font-weight: 700; font-size: 11px; }
+    .suggestion { display: flex; align-items: center; gap: 10px; margin: 14px 0; }
+    .suggestion .avatar { width: 38px; height: 38px; font-size: 11px; }
+    .suggestion-info { min-width: 0; flex: 1; }
+    .suggestion-info strong { font-size: 12px; display: block; margin-bottom: 4px; }
+    .suggestion-info span { font-size: 10px; color: var(--muted); }
+
+    .add {
+      border: 1px solid #cfe8da;
+      background: #f2fbf6;
+      color: var(--green-dark);
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      font-size: 18px;
+    }
+
+    .mini-internship { padding: 12px 0; border-top: 1px solid var(--line); }
+    .mini-internship:first-of-type { border-top: 0; }
+    .mini-internship strong { display: block; font-size: 12px; margin: 7px 0; }
+    .mini-internship span { font-size: 10px; color: var(--muted); }
+    .mini-internship .tag { display: inline-block; margin-top: 8px; }
+    .footer-note { font-size: 10px; line-height: 1.8; color: #98a3b0; padding: 4px; }
+    .mobile-nav { display: none; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .filters { display: flex; gap: 9px; flex-wrap: wrap; margin: 16px 0; }
+
+    .search-field {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      flex: 1;
+      min-width: 190px;
+    }
+
+    .search-field input { border: 0; outline: 0; width: 100%; min-width: 0; }
+
+    .filter-select {
+      height: 43px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: white;
+      color: #607085;
+      padding: 0 12px;
+      max-width: 150px;
+    }
+
+    .results-line { display: flex; align-items: center; justify-content: space-between; margin: 18px 0 12px; color: var(--muted); font-size: 12px; }
+
+    .internship-card { padding: 17px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+    .internship-card .company-logo { width: 49px; height: 49px; }
+    .internship-content { flex: 1; min-width: 0; }
+    .internship-content h3 { font-size: 15px; margin: 2px 0 7px; color: var(--navy); }
+    .internship-content .company-name { font-size: 12px; color: #68788b; }
+    .internship-content .tag-row { margin: 11px 0; }
+    .internship-side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .deadline { font-size: 11px; color: #7e8a98; white-space: nowrap; }
+    .deadline strong { color: #bd7b16; }
+    .detail-card { padding: 24px; }
+    .detail-hero { display: flex; gap: 15px; align-items: flex-start; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+    .detail-hero .company-logo { width: 60px; height: 60px; font-size: 17px; }
+    .detail-hero h1 { font-size: 24px; letter-spacing: -.8px; margin: 2px 0 8px; }
+    .detail-hero p { color: var(--muted); margin: 0; font-size: 12px; }
+    .detail-hero .btn { margin-left: auto; }
+    .detail-stats { display: flex; gap: 20px; flex-wrap: wrap; padding: 17px 0; color: #627287; font-size: 12px; }
+    .detail-section { margin-top: 22px; }
+    .detail-section h3 { font-size: 15px; margin: 0 0 12px; }
+    .detail-section p, .detail-section li { font-size: 13px; color: #596a7c; line-height: 1.8; }
+    .detail-section ul { padding-left: 20px; }
+    .skill { display: inline-flex; background: var(--mint); color: var(--green-dark); padding: 8px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; margin: 0 5px 6px 0; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .kpi { padding: 17px; min-width: 0; }
+    .kpi-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; }
+    .kpi-icon { width: 34px; height: 34px; border-radius: 10px; background: #e7f8ef; color: var(--green-dark); display: grid; place-items: center; font-size: 17px; }
+    .kpi-icon.blue { background: #eaf0ff; color: #4266bd; }
+    .kpi-icon.orange { background: #fff2df; color: #b47a1b; }
+    .kpi-icon.purple { background: #f1eaff; color: #8059bb; }
+    .kpi-value { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: var(--navy); }
+    .kpi-label { font-size: 11px; color: var(--muted); line-height: 1.4; margin-top: 5px; }
+    .dashboard-section { padding: 20px; margin-bottom: 16px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+    .section-head h3 { margin: 0; font-size: 15px; }
+    .table-wrap { overflow-x: auto; }
+    .data-table { border-collapse: collapse; width: 100%; min-width: 500px; }
+    .data-table th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: #8995a3; font-weight: 700; padding: 12px 10px; border-bottom: 1px solid var(--line); }
+    .data-table td { padding: 14px 10px; border-bottom: 1px solid #eff2f5; font-size: 12px; }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .status { display: inline-flex; padding: 6px 9px; border-radius: 7px; font-size: 10px; font-weight: 700; white-space: nowrap; background: #fff3dc; color: #a36b13; }
+    .status.green { background: var(--mint); color: var(--green-dark); }
+    .status.blue { background: #eaf0ff; color: #4666b2; }
+    .status.gray { background: #eff2f5; color: #657386; }
+    .status.red { background: #ffebec; color: #bb4e57; }
+    .profile-cover { height: 132px; border-radius: 16px 16px 0 0; background: linear-gradient(110deg, #10243e, #254f69 65%, #23b875); position: relative; overflow: hidden; }
+    .profile-cover::after { content: ""; position: absolute; width: 260px; height: 260px; border: 1px solid #ffffff25; border-radius: 50%; right: 10%; top: -130px; box-shadow: 0 0 0 35px #ffffff0b, 0 0 0 70px #ffffff08; }
+    .profile-main { padding: 0 24px 24px; }
+    .profile-header { display: flex; align-items: flex-end; gap: 16px; margin-top: -34px; position: relative; }
+    .profile-header .avatar { width: 82px; height: 82px; border: 5px solid white; font-size: 24px; }
+    .profile-header h1 { font-size: 21px; margin: 0 0 6px; }
+    .profile-header p { font-size: 12px; color: var(--muted); margin: 0 0 5px; }
+    .profile-header .btn { margin-left: auto; margin-bottom: 7px; }
+    .profile-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+    .info-panel { padding: 20px; }
+    .info-panel h3 { font-size: 14px; margin: 0 0 16px; }
+    .info-row { margin: 14px 0; }
+    .info-row label { font-size: 10px; color: #8a97a6; display: block; margin-bottom: 6px; }
+    .info-row strong { font-size: 12px; font-weight: 600; }
+    .skill-list { display: flex; gap: 7px; flex-wrap: wrap; }
+    .empty-state { text-align: center; padding: 46px 20px; }
+    .empty-icon { width: 60px; height: 60px; background: var(--mint); color: var(--green-dark); display: grid; place-items: center; border-radius: 18px; margin: 0 auto 15px; font-size: 25px; }
+    .empty-state h3 { font-size: 16px; margin: 0 0 8px; }
+    .empty-state p { font-size: 12px; color: var(--muted); margin: 0 0 18px; line-height: 1.6; }
+
+    .toast {
+      position: fixed;
+      z-index: 100;
+      bottom: 92px;
+      left: 50%;
+      transform: translate(-50%, 20px);
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 35px #10243e30;
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      max-width: calc(100vw - 30px);
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: #10243e80;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 18px;
+      width: min(540px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      padding: 24px;
+      box-shadow: 0 24px 80px #0c203340;
+    }
+
+    .modal h2 { font-size: 20px; color: var(--navy); margin: 0 0 7px; }
+    .modal p { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 0 0 20px; }
+    .field { display: block; margin: 14px 0; }
+    .field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
+    .field input, .field select, .field textarea { width: 100%; border: 1px solid #dce4eb; border-radius: 10px; padding: 12px; background: white; outline: 0; color: var(--ink); }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--green); }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 20px; }
+
+    .auth-screen { min-height: 100vh; display: none; background: #fff; }
+    .auth-screen.active { display: grid; grid-template-columns: .9fr 1.1fr; }
+
+    .auth-aside {
+      background: var(--navy);
+      color: white;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-aside::after { content: ""; position: absolute; width: 430px; height: 430px; border: 1px solid #ffffff1c; border-radius: 50%; right: -150px; bottom: 4%; box-shadow: 0 0 0 45px #ffffff08, 0 0 0 90px #ffffff06; }
+    .auth-aside .brand { color: white; }
+    .auth-aside h1 { font-size: 38px; letter-spacing: -1.8px; line-height: 1.15; max-width: 440px; margin: 0 0 18px; }
+    .auth-aside p { color: #c4d0dc; line-height: 1.8; max-width: 410px; }
+    .auth-aside .green-text { color: #4ee09b; }
+    .auth-quote { font-size: 12px; color: #aab9c8; position: relative; z-index: 1; }
+    .auth-main { padding: 36px 24px; display: flex; align-items: center; justify-content: center; }
+    .auth-form { width: min(420px, 100%); }
+    .auth-form h2 { font-size: 27px; letter-spacing: -.8px; margin: 0 0 8px; color: var(--navy); }
+    .auth-form > p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0 0 26px; }
+    .auth-switch { display: flex; gap: 8px; background: #f1f4f6; padding: 5px; border-radius: 11px; margin: 18px 0; }
+    .auth-switch button { flex: 1; border: 0; border-radius: 8px; padding: 11px; background: transparent; color: #718094; font-weight: 700; }
+    .auth-switch button.selected { background: white; color: var(--navy); box-shadow: 0 2px 7px #10243e0c; }
+    .auth-bottom { text-align: center; font-size: 12px; color: var(--muted); margin-top: 20px; }
+    .auth-bottom button { border: 0; background: transparent; color: var(--green-dark); font-weight: 700; }
+    .hidden { display: none !important; }
+
+    @media (max-width: 1100px) {
+      .layout { grid-template-columns: 210px minmax(0, 1fr); gap: 18px; }
+      .right-rail { display: none; }
+      .topbar { gap: 20px; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      body { font-size: 13px; }
+      .topbar { height: 60px; padding: 0 16px; gap: 12px; }
+      .brand { font-size: 20px; }
+      .brand-mark { width: 32px; height: 32px; }
+      .topsearch, .desktop-links { display: none; }
+      .top-actions { margin-left: auto; gap: 8px; }
+      .top-actions .iconbtn:first-child { display: none; }
+      .top-actions .avatar { width: 34px; height: 34px; }
+      .layout { display: block; margin: 0; padding: 18px 12px calc(100px + env(safe-area-inset-bottom)); max-width: 620px; }
+      .sidebar { display: none; }
+      .page-heading { margin: 5px 2px 17px; }
+      .page-heading h1 { font-size: 23px; }
+      .page-heading p { font-size: 12px; }
+      .feed-post { padding: 15px; margin-bottom: 12px; border-radius: 14px; }
+      .post-copy { font-size: 13px; margin: 13px 0; }
+      .post-image { height: 160px; padding: 18px; }
+      .image-copy h3 { font-size: 18px; }
+      .abstract-art { width: 94px; height: 94px; font-size: 35px; border-radius: 24px; }
+      .opportunity-preview { padding: 11px; gap: 9px; }
+      .opportunity-preview .btn { padding: 8px; font-size: 11px; }
+      .post-actions { gap: 4px; }
+      .post-action { padding: 11px 4px; font-size: 12px; }
+
+      .mobile-nav {
+        position: fixed;
+        z-index: 30;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: calc(66px + env(safe-area-inset-bottom));
+        padding: 6px 5px calc(7px + env(safe-area-inset-bottom));
+        background: #ffffffed;
+        backdrop-filter: blur(18px);
+        border-top: 1px solid var(--line);
+      }
+
+      .mobile-nav button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 0; background: transparent; color: #8a97a6; font-size: 9px; font-weight: 700; position: relative; }
+      .mobile-nav button .mobile-ico { font-size: 20px; line-height: 1; }
+      .mobile-nav button.active { color: var(--green-dark); }
+      .mobile-nav button.active::before { content: ""; position: absolute; top: 0; width: 26px; height: 3px; background: var(--green); border-radius: 0 0 4px 4px; }
+      .filters { gap: 7px; }
+      .search-field { min-width: 100%; flex: none; }
+      .filter-select { flex: 1; max-width: none; min-width: calc(50% - 5px); }
+      .internship-card { padding: 14px; gap: 10px; }
+      .internship-card .company-logo { width: 42px; height: 42px; }
+      .internship-content h3 { font-size: 13px; line-height: 1.4; }
+      .internship-side { align-items: flex-start; }
+      .internship-side .btn { font-size: 11px; padding: 8px; }
+      .deadline { white-space: normal; line-height: 1.5; }
+      .tag { font-size: 10px; }
+      .detail-card { padding: 17px; }
+      .detail-hero { flex-wrap: wrap; }
+      .detail-hero h1 { font-size: 21px; }
+      .detail-hero .btn { margin-left: 0; width: 100%; }
+      .detail-stats { gap: 12px; }
+      .kpi-grid { gap: 9px; margin-bottom: 13px; }
+      .kpi { padding: 13px; }
+      .kpi-icon { width: 30px; height: 30px; }
+      .kpi-value { font-size: 23px; }
+      .kpi-label { font-size: 10px; }
+      .dashboard-section { padding: 14px; }
+      .profile-header { align-items: flex-start; flex-wrap: wrap; gap: 11px; }
+      .profile-header .avatar { width: 70px; height: 70px; }
+      .profile-header h1 { font-size: 18px; }
+      .profile-header .btn { margin: 0 0 0 auto; }
+      .profile-main { padding: 0 16px 18px; }
+      .profile-columns { grid-template-columns: 1fr; }
+      .auth-screen.active { grid-template-columns: 1fr; }
+      .auth-aside { display: none; }
+      .auth-main { padding: 28px 22px; align-items: flex-start; }
+      .auth-form { padding-top: 20px; }
+      .toast { bottom: calc(80px + env(safe-area-inset-bottom)); }
+      .modal { padding: 20px; }
+      .profile-cover { height: 112px; }
+    }
+
+    @media (min-width: 761px) and (max-width: 900px) {
+      .layout { padding: 0 16px; margin-top: 20px; }
+      .topbar { padding: 0 16px; }
+      .navlink { padding: 0 8px; font-size: 12px; }
+      .top-actions { gap: 7px; }
+    }
+  </style>
+</head>
 <body>
-<div class="app" id="appShell">
-<header class="topbar" id="topbar"><div class="brand"><span class="brand-mark">k.</span> kandia</div><label class="topsearch"><span>⌕</span><input id="globalSearch" placeholder="Pesquisar estágios, empresas..." aria-label="Pesquisar"/><span>⌘K</span></label><nav class="desktop-links" aria-label="Navegação principal"><button class="navlink active" data-view="feed">▤ Feed</button><button class="navlink" data-view="internships">⌕ Estágios</button><button class="navlink" data-view="student">▦ Painel</button></nav><div class="top-actions"><button class="iconbtn" data-view="notifications" aria-label="Notificações">♧<span class="dot"></span></button><button class="iconbtn" id="topCreate" aria-label="Criar publicação">＋</button><button class="avatar" data-view="profile" aria-label="Abrir perfil">JM</button></div></header>
-<div class="layout" id="mainLayout"><aside class="sidebar"><section class="side-card side-profile"><div class="avatar">JM</div><h3>João Manuel</h3><div class="muted small">Estudante de Engenharia Informática</div><div class="profile-progress"><span></span></div><div class="muted small">Perfil 72% completo</div><button class="text-link" style="margin-top:12px" data-view="profile">Completar perfil →</button></section><section class="side-card side-menu"><button class="side-item active" data-view="feed"><span class="ico">▤</span>Feed principal</button><button class="side-item" data-view="internships"><span class="ico">⌕</span>Explorar estágios</button><button class="side-item" data-view="student"><span class="ico">▦</span>As minhas candidaturas</button><button class="side-item" data-view="notifications"><span class="ico">♧</span>Notificações <span class="tag green" style="margin-left:auto">3</span></button><button class="side-item" data-view="profile"><span class="ico">◎</span>O meu perfil</button><button class="side-item" id="switchRole"><span class="ico">⇄</span>Pré-visualizar empresa</button></section><section class="side-tip"><strong>O teu próximo passo?</strong><p>Um perfil completo aumenta as tuas hipóteses de ser notado por recrutadores.</p><button data-view="profile">Melhorar perfil ↗</button></section></aside>
-<main class="main">
-<section class="view active" id="view-feed"><div class="page-heading"><div class="card composer"><div class="composer-top"><div class="avatar">JM</div><button class="composer-prompt" id="composerPrompt">Partilha uma ideia ou conquista profissional...</button></div><div class="composer-bottom"><button class="composer-tool" id="sharePhoto">▧ Foto</button><button class="composer-tool" id="shareOpportunity">✧ Partilhar oportunidade</button><span class="small muted">Comunidade Kandia</span></div></div>
-<article class="card feed-post" data-post="1"><div class="post-head"><div class="company-logo">ANG</div><div class="post-meta"><strong>Angola Cables <span class="tag green" style="margin-left:5px">Empresa</span></strong><span>Há 28 min · <span>◉ Público</span></span></div><button class="more" aria-label="Mais opções">···</button></div><p class="post-copy">O teu talento pode ligar Angola ao mundo. 🌍 Estamos à procura de jovens curiosos, com vontade de aprender e paixão por tecnologia, para integrar a nossa equipa de inovação em Luanda.
+  <div class="app" id="appShell">
+    <header class="topbar" id="topbar">
+      <div class="brand"><span class="brand-mark">k.</span> kandia</div>
 
-Se estás a construir o teu caminho em TI, esta oportunidade pode ser o teu ponto de partida.</p><div class="post-image tech"><div class="image-copy"><span class="eyebrow">O futuro é conectado</span><h3>Constrói o que<br/>vem a seguir.</h3><p>Aprende com equipas que ligam continentes.</p></div><div class="abstract-art">⌘</div></div><div class="opportunity-preview"><div class="company-logo blue">AC</div><div class="opp-info"><strong>Estágio em Redes e Sistemas</strong><span>Luanda · Híbrido · 6 meses</span><div class="tag-row"><span class="tag green">Bolsa incluída</span><span class="tag">Tecnologia</span></div></div><button class="btn btn-primary btn-sm" data-detail="0">Ver oportunidade ↗</button></div><div class="post-stats"><span><span class="likes-count">♡ 128 gostos</span> · <span class="comments-count">24 comentários</span></span><span>1,2 mil visualizações</span></div><div class="post-actions"><button class="post-action like-btn">♡ Gostar</button><button class="post-action comment-btn">▢ Comentar</button></div><div class="comments"><div class="comment"><div class="avatar orange">AS</div><div class="comment-body"><strong>Ana Sofia <span class="comment-time">· há 12 min</span></strong><p>Excelente iniciativa! Este tipo de oportunidade faz mesmo a diferença para quem está a começar. 👏</p></div></div><div class="comment"><div class="avatar purple">MC</div><div class="comment-body"><strong>Mateus Costa <span class="comment-time">· há 8 min</span></strong><p>Gostava de saber se aceitam estudantes do 3.º ano.</p></div></div><form class="comment-form"><div class="avatar">JM</div><input aria-label="Escrever comentário" placeholder="Escreve um comentário..."/><button class="send" aria-label="Enviar comentário">➤</button></form></div></article>
-<article class="card feed-post" data-post="2"><div class="post-head"><div class="company-logo orange">BFA</div><div class="post-meta"><strong>Banco de Fomento Angola <span class="tag green" style="margin-left:5px">Empresa</span></strong><span>Há 2 horas · ◉ Público</span></div><button class="more" aria-label="Mais opções">···</button></div><p class="post-copy">A próxima geração de profissionais financeiros começa com curiosidade, rigor e vontade de fazer diferente. 📈
+      <label class="topsearch">
+        <span>⌕</span>
+        <input id="globalSearch" placeholder="Pesquisar estágios, empresas..." aria-label="Pesquisar">
+        <span>⌘K</span>
+      </label>
 
-Abrimos candidaturas para o nosso programa de estágio em análise de dados. Queremos conhecer estudantes que transformam números em decisões.</p><div class="opportunity-preview"><div class="company-logo orange">BFA</div><div class="opp-info"><strong>Estágio em Análise de Dados</strong><span>Luanda · Presencial · 4 meses</span><div class="tag-row"><span class="tag">Finanças</span><span class="tag green">12 vagas</span></div></div><button class="btn btn-outline btn-sm" data-detail="1">Ver oportunidade ↗</button></div><div class="post-stats"><span><span class="likes-count">♡ 86 gostos</span> · <span class="comments-count">11 comentários</span></span><span>743 visualizações</span></div><div class="post-actions"><button class="post-action like-btn">♡ Gostar</button><button class="post-action comment-btn">▢ Comentar</button></div><div class="comments hidden"><form class="comment-form"><div class="avatar">JM</div><input aria-label="Escrever comentário" placeholder="Escreve um comentário..."/><button class="send" aria-label="Enviar comentário">➤</button></form></div></article>
-<article class="card feed-post" data-post="3"><div class="post-head"><div class="company-logo purple">UNIT</div><div class="post-meta"><strong>Universidade Agostinho Neto</strong><span>Ontem · ◉ Público</span></div><button class="more" aria-label="Mais opções">···</button></div><p class="post-copy">Dica de carreira da semana: não esperes por dominar todas as ferramentas para te candidatares. Mostra o que já sabes, explica o que queres aprender e deixa o teu portefólio falar por ti. 💡</p><div class="post-stats"><span><span class="likes-count">♡ 64 gostos</span> · <span class="comments-count">8 comentários</span></span><span>502 visualizações</span></div><div class="post-actions"><button class="post-action like-btn">♡ Gostar</button><button class="post-action comment-btn">▢ Comentar</button></div><div class="comments hidden"><form class="comment-form"><div class="avatar">JM</div><input aria-label="Escrever comentário" placeholder="Escreve um comentário..."/><button class="send" aria-label="Enviar comentário">➤</button></form></div></article>
-</section>
-<section class="view" id="view-internships"><div class="page-heading"><div><h1>Explorar estágios</h1><p>Encontra a oportunidade certa para começares.</p></div><span class="tag green">Angola 🇦🇴</span></div><div class="filters"><label class="search-field">⌕ <input id="internshipSearch" placeholder="Cargo, empresa ou competência..." aria-label="Pesquisar estágios"/></label><select class="filter-select" id="locationFilter" aria-label="Filtrar localização"><option value="">Todas as localizações</option><option>Luanda</option><option>Benguela</option><option>Huíla</option><option>Cabinda</option></select><select class="filter-select" id="areaFilter" aria-label="Filtrar área"><option value="">Todas as áreas</option><option>Tecnologia</option><option>Finanças</option><option>Marketing</option><option>Engenharia</option></select><select class="filter-select" id="modeFilter" aria-label="Filtrar modalidade"><option value="">Modalidade</option><option>Híbrido</option><option>Presencial</option><option>Remoto</option></select></div><div class="results-line"><span id="resultsCount">6 oportunidades encontradas</span><select class="filter-select" style="height:34px" aria-label="Ordenar resultados"><option>Mais recentes</option><option>Prazo mais próximo</option></select></div><div id="internshipList"></div><div style="text-align:center;margin:20px"><button class="btn btn-outline" id="loadMore">Carregar mais oportunidades ↓</button></div></section>
-<section class="view" id="view-detail"><button class="text-link" id="backToInternships" style="margin-bottom:16px">← Voltar às oportunidades</button><div class="card detail-card" id="detailContent"></div></section>
-<section class="view" id="view-student"><div class="page-heading"><div><h1>Olá, João 👋</h1><p>Acompanha o progresso das tuas candidaturas.</p></div><button class="btn btn-primary" data-view="internships">＋ Encontrar estágio</button></div><div class="kpi-grid"><div class="card kpi"><div class="kpi-top"><span class="kpi-icon">▤</span><span class="tag">Total</span></div><div class="kpi-value">12</div><div class="kpi-label">Total de candidaturas</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon orange">◷</span></div><div class="kpi-value">5</div><div class="kpi-label">Em análise</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon blue">♧</span></div><div class="kpi-value">2</div><div class="kpi-label">Entrevistas</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon purple">✦</span></div><div class="kpi-value">1</div><div class="kpi-label">Selecionado</div></div></div><section class="card dashboard-section"><div class="section-head"><h3>Candidaturas recentes</h3><button class="text-link" id="allApplications">Ver todas →</button></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Oportunidade</th><th>Data</th><th>Estado</th><th>Acção</th></tr></thead><tbody><tr><td><strong>Estágio em Redes e Sistemas</strong><br/><span class="muted small">Angola Cables</span></td><td>10 Out, 2026</td><td><span class="status blue">Em análise</span></td><td><button class="text-link" data-detail="0">Detalhes</button></td></tr><tr><td><strong>Desenvolvimento Web</strong><br/><span class="muted small">Xtech Angola</span></td><td>08 Out, 2026</td><td><span class="status">Entrevista</span></td><td><button class="text-link" data-detail="2">Detalhes</button></td></tr><tr><td><strong>Estágio em Análise de Dados</strong><br/><span class="muted small">Banco BFA</span></td><td>02 Out, 2026</td><td><span class="status green">Selecionado</span></td><td><button class="text-link" data-detail="1">Detalhes</button></td></tr><tr><td><strong>Assistente de Marketing</strong><br/><span class="muted small">Unitel</span></td><td>28 Set, 2026</td><td><span class="status gray">Submetida</span></td><td><button class="text-link" data-detail="3">Detalhes</button></td></tr></tbody></table></div></section><section class="card dashboard-section"><div class="section-head"><h3>Melhora o teu perfil</h3><span class="tag green">72% completo</span></div><div class="profile-progress"><span></span></div><p class="muted small" style="line-height:1.6">Adiciona o teu CV e mais competências para te destacares junto das empresas.</p><button class="btn btn-outline btn-sm" data-view="profile">Completar perfil →</button></section></section>
-<section class="view" id="view-company"><div class="page-heading"><div><h1>Painel da empresa</h1><p>Bem-vinda de volta, equipa de recrutamento.</p></div><button class="btn btn-primary" id="publishInternship">＋ Publicar estágio</button></div><div class="kpi-grid"><div class="card kpi"><div class="kpi-top"><span class="kpi-icon">▤</span></div><div class="kpi-value">8</div><div class="kpi-label">Estágios publicados</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon blue">♧</span></div><div class="kpi-value">146</div><div class="kpi-label">Total de candidaturas</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon orange">◷</span></div><div class="kpi-value">32</div><div class="kpi-label">Candidaturas em análise</div></div><div class="card kpi"><div class="kpi-top"><span class="kpi-icon purple">✦</span></div><div class="kpi-value">9</div><div class="kpi-label">Candidatos selecionados</div></div></div><section class="card dashboard-section"><div class="section-head"><h3>As minhas oportunidades</h3><button class="text-link" id="companyAll">Ver todas →</button></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Oportunidade</th><th>Candidatos</th><th>Prazo</th><th>Estado</th><th>Acções</th></tr></thead><tbody><tr><td><strong>Redes e Sistemas</strong><br/><span class="muted small">Tecnologia · Luanda</span></td><td>34</td><td>28 Out, 2026</td><td><span class="status green">Activa</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr><tr><td><strong>Suporte Técnico</strong><br/><span class="muted small">Tecnologia · Luanda</span></td><td>21</td><td>02 Nov, 2026</td><td><span class="status green">Activa</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr><tr><td><strong>Analista de Dados</strong><br/><span class="muted small">Dados · Híbrido</span></td><td>48</td><td>20 Out, 2026</td><td><span class="status">A terminar</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr></tbody></table></div></section><section class="card dashboard-section"><div class="section-head"><h3>Actividade recente</h3><button class="text-link" data-view="notifications">Ver tudo →</button></div><div class="suggestion"><div class="avatar">JM</div><div class="suggestion-info"><strong>João Manuel candidatou-se</strong><span>Estágio em Redes e Sistemas · há 18 min</span></div><button class="btn btn-outline btn-sm candidate-btn">Rever</button></div><div class="suggestion"><div class="avatar orange">AS</div><div class="suggestion-info"><strong>Ana Sofia foi seleccionada</strong><span>Estágio em Suporte Técnico · há 2 h</span></div><span class="status green">Seleccionada</span></div></section></section>
-<section class="view" id="view-profile"><div class="card" style="overflow:hidden"><div class="profile-cover"></div><div class="profile-main"><div class="profile-header"><div class="avatar">JM</div><div style="padding-bottom:7px"><h1>João Manuel</h1><p>Estudante de Engenharia Informática</p><p>📍 Luanda, Angola · Universidade Agostinho Neto</p></div><button class="btn btn-outline btn-sm" id="editProfile">✎ Editar perfil</button></div><div class="tag-row" style="margin-top:17px"><span class="tag green">Aberto a estágios</span><span class="tag">72% perfil completo</span></div></div></div><div class="profile-columns"><section class="card info-panel"><h3>Sobre mim <button class="text-link" style="float:right" id="editBio">Editar</button></h3><p class="muted" style="font-size:12px;line-height:1.8">Estudante de Engenharia Informática apaixonado por desenvolvimento web, bases de dados e criação de soluções digitais com impacto. Procuro uma oportunidade para aprender com profissionais experientes e contribuir com a minha energia e curiosidade.</p><div class="info-row"><label>INSTITUIÇÃO</label><strong>Universidade Agostinho Neto</strong></div><div class="info-row"><label>CURSO</label><strong>Engenharia Informática · 3.º ano</strong></div><div class="info-row"><label>ANO ACADÉMICO</label><strong>2026 / 2027</strong></div></section><section class="card info-panel"><h3>Competências <button class="text-link" style="float:right" id="editSkills">+ Adicionar</button></h3><div class="skill-list"><span class="tag green">Python</span><span class="tag green">Django</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">Git</span></div><div class="info-row" style="margin-top:24px"><label>CURRÍCULO (CV)</label><div style="display:flex;align-items:center;gap:10px"><span style="font-size:22px">▤</span><div><strong>CV_Joao_Manuel.pdf</strong><div class="muted small" style="margin-top:4px">Actualizado em 09 Out, 2026</div></div><button class="text-link" id="updateCV">Actualizar</button></div></div><div class="info-row"><label>PORTFÓLIO</label><strong style="color:var(--green-dark)">github.com/joaomanuel ↗</strong></div></section></div></section>
-<section class="view" id="view-notifications"><div class="page-heading"><div><h1>Notificações</h1><p>As novidades importantes para a tua carreira.</p></div><button class="text-link" id="markRead">Marcar tudo como lido</button></div><div class="card dashboard-section" id="notificationList"><div class="suggestion"><div class="avatar green">✓</div><div class="suggestion-info"><strong>A tua candidatura está em análise</strong><span>Angola Cables · Estágio em Redes e Sistemas · há 18 min</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div><div class="suggestion"><div class="avatar orange">♧</div><div class="suggestion-info"><strong>Tens uma nova sugestão de oportunidade</strong><span>Desenvolvimento Web · Xtech Angola · há 2 h</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div><div class="suggestion"><div class="avatar purple">✦</div><div class="suggestion-info"><strong>O teu perfil foi visto por uma empresa</strong><span>Recrutamento BFA · Ontem</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div><div class="suggestion"><div class="avatar blue">♡</div><div class="suggestion-info"><strong>A tua publicação recebeu 12 gostos</strong><span>Comunidade Kandia · Há 2 dias</span></div></div></div></section>
-</main><aside class="right-rail"><section class="card right-card"><div class="right-title"><h3>Empresas para conhecer</h3><button class="text-link" id="suggestMore">Ver todas</button></div><div class="suggestion"><div class="company-logo orange">BFA</div><div class="suggestion-info"><strong>Banco BFA</strong><span>Serviços financeiros</span></div><button class="add follow-btn" aria-label="Seguir Banco BFA">＋</button></div><div class="suggestion"><div class="company-logo blue">UTL</div><div class="suggestion-info"><strong>Unitel</strong><span>Telecomunicações</span></div><button class="add follow-btn" aria-label="Seguir Unitel">＋</button></div><div class="suggestion"><div class="company-logo">ANG</div><div class="suggestion-info"><strong>Angola Cables</strong><span>Tecnologia e conectividade</span></div><button class="add follow-btn" aria-label="Seguir Angola Cables">＋</button></div></section><section class="card right-card"><div class="right-title"><h3>Oportunidades em destaque</h3><button class="text-link" data-view="internships">Ver todas</button></div><div class="mini-internship"><span class="eyebrow">TECNOLOGIA · LUANDA</span><strong>Estágio em Desenvolvimento Web</strong><span>Xtech Angola · Híbrido</span><br/><span class="tag green">Prazo: 30 Out</span></div><div class="mini-internship"><span class="eyebrow" style="color:#b47a1b">FINANÇAS · LUANDA</span><strong>Analista de Dados Júnior</strong><span>Banco BFA · Presencial</span><br/><span class="tag">12 vagas</span></div><div class="mini-internship"><span class="eyebrow" style="color:#4766b5">MARKETING · BENGUELA</span><strong>Assistente de Marketing</strong><span>Refriango · Presencial</span><br/><span class="tag">Bolsa incluída</span></div></section><div class="footer-note">Sobre · Ajuda · Privacidade · Termos<br/>© 2026 Kandia · Feito em Angola 🇦🇴</div></aside></div>
-<nav class="mobile-nav" aria-label="Navegação móvel"><button class="active" data-view="feed"><span class="mobile-ico">▤</span><span>Feed</span></button><button data-view="internships"><span class="mobile-ico">⌕</span><span>Estágios</span></button><button id="mobilePublish"><span class="mobile-ico">⊕</span><span>Publicar</span></button><button data-view="notifications"><span class="mobile-ico">♧</span><span>Notificações</span></button><button data-view="profile"><span class="mobile-ico">◎</span><span>Perfil</span></button></nav>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><h2 id="modalTitle">Criar publicação</h2><p id="modalDescription">Partilha uma novidade com a comunidade Kandia.</p><form id="modalForm"><div id="modalFields"></div><div class="modal-actions"><button type="button" class="btn btn-outline" id="cancelModal">Cancelar</button><button type="submit" class="btn btn-primary" id="modalSubmit">Publicar</button></div></form></div></div>
-</div>
-<div class="auth-screen" id="authScreen"><aside class="auth-aside"><div class="brand"><span class="brand-mark">k.</span> kandia</div><div><h1>O teu talento merece <span class="green-text">uma oportunidade.</span></h1><p>Descobre estágios, conhece empresas e constrói o teu futuro profissional. Tudo começa com uma ligação.</p></div><div class="auth-quote">“Grandes carreiras começam com pequenas oportunidades.”<br/><br/>Feito para o talento angolano. 🇦🇴</div></aside><main class="auth-main"><form class="auth-form" id="authForm"><button type="button" class="text-link" id="backToApp">← Voltar à aplicação</button><h2 id="authTitle" style="margin-top:26px">Bem-vindo de volta</h2><p id="authSubtitle">Entra na tua conta e continua a construir o teu caminho.</p><div class="auth-switch"><button type="button" class="selected" data-role="student">Sou estudante</button><button type="button" data-role="company">Sou empresa</button></div><div id="authFields"></div><button class="btn btn-primary" style="width:100%;margin-top:10px" id="authSubmit">Entrar na minha conta →</button><div class="auth-bottom" id="authBottom">Ainda não tens conta? <button type="button" id="switchAuth">Criar conta</button></div><div class="auth-bottom"><button type="button" id="forgotPassword">Esqueci-me da palavra-passe</button></div></form></main></div>
-<script>
-const internships=[
-{id:0,title:'Estágio em Redes e Sistemas',company:'Angola Cables',logo:'AC',logoClass:'',location:'Luanda',area:'Tecnologia',mode:'Híbrido',deadline:'28 Out, 2026',days:15,type:'Estágio profissional',duration:'6 meses',salary:'Bolsa incluída',skills:['Redes TCP/IP','Linux','Segurança informática'],description:'Integra uma equipa que opera infraestruturas de conectividade internacional. Vais aprender com especialistas e participar em projectos reais de redes, sistemas e segurança.',responsibilities:['Apoiar a monitorização de redes e serviços.','Participar na configuração e manutenção de sistemas.','Documentar procedimentos técnicos e colaborar na resolução de incidentes.'],requirements:['Estudante de Engenharia Informática ou área relacionada.','Conhecimentos básicos de redes e sistemas operativos.','Vontade de aprender, trabalhar em equipa e resolver problemas.']},
-{id:1,title:'Estágio em Análise de Dados',company:'Banco BFA',logo:'BFA',logoClass:'orange',location:'Luanda',area:'Finanças',mode:'Presencial',deadline:'24 Out, 2026',days:11,type:'Estágio profissional',duration:'4 meses',salary:'Bolsa incluída',skills:['Excel','SQL','Power BI'],description:'Transforma dados em informação útil para decisões de negócio. Vais trabalhar com equipas multidisciplinares e conhecer processos reais do sector financeiro.',responsibilities:['Preparar e validar conjuntos de dados.','Criar relatórios e visualizações de indicadores.','Apoiar a equipa na análise de tendências.'],requirements:['Formação em Informática, Matemática, Economia ou similar.','Conhecimentos de Excel e SQL.','Pensamento analítico e atenção ao detalhe.']},
-{id:2,title:'Estágio em Desenvolvimento Web',company:'Xtech Angola',logo:'XT',logoClass:'blue',location:'Luanda',area:'Tecnologia',mode:'Híbrido',deadline:'30 Out, 2026',days:17,type:'Estágio curricular',duration:'3 meses',salary:'Negociável',skills:['Python','Django','JavaScript'],description:'Ajuda a desenvolver produtos digitais utilizados por empresas angolanas. Vais colaborar em funcionalidades de frontend e backend com acompanhamento de programadores séniores.',responsibilities:['Implementar e testar funcionalidades web.','Participar em revisões de código e reuniões técnicas.','Trabalhar com APIs e bases de dados relacionais.'],requirements:['Conhecimentos de HTML, CSS e JavaScript.','Noções de uma framework backend.','Portefólio académico ou projectos pessoais valorizados.']},
-{id:3,title:'Assistente de Marketing Digital',company:'Refriango',logo:'RF',logoClass:'orange',location:'Benguela',area:'Marketing',mode:'Presencial',deadline:'05 Nov, 2026',days:23,type:'Estágio profissional',duration:'5 meses',salary:'Bolsa incluída',skills:['Redes sociais','Canva','Analytics'],description:'Apoia campanhas digitais de marcas nacionais e aprende a transformar ideias criativas em comunicação que chega às pessoas.',responsibilities:['Apoiar o planeamento de conteúdos.','Acompanhar métricas de campanhas digitais.','Colaborar na preparação de materiais de comunicação.'],requirements:['Formação em Marketing, Comunicação ou área próxima.','Boa comunicação escrita e criatividade.','Interesse por conteúdos digitais.']},
-{id:4,title:'Estágio em Engenharia Civil',company:'Omatapalo',logo:'OM',logoClass:'purple',location:'Huíla',area:'Engenharia',mode:'Presencial',deadline:'12 Nov, 2026',days:30,type:'Estágio curricular',duration:'6 meses',salary:'A definir',skills:['AutoCAD','Excel','Planeamento'],description:'Participa no acompanhamento de obra e aprende processos de planeamento, controlo de qualidade e coordenação de equipas.',responsibilities:['Apoiar medições e relatórios de obra.','Acompanhar actividades de execução.','Organizar documentação técnica.'],requirements:['Estudante de Engenharia Civil.','Conhecimentos de desenho técnico.','Disponibilidade para actividade presencial.']},
-{id:5,title:'Estágio em Suporte Técnico',company:'Unitel',logo:'UTL',logoClass:'blue',location:'Luanda',area:'Tecnologia',mode:'Presencial',deadline:'18 Nov, 2026',days:36,type:'Estágio profissional',duration:'4 meses',salary:'Bolsa incluída',skills:['Windows','Redes','Atendimento'],description:'Aprende a prestar suporte técnico e a resolver desafios tecnológicos num ambiente dinâmico e colaborativo.',responsibilities:['Registar e acompanhar pedidos de suporte.','Apoiar a configuração de equipamentos.','Documentar soluções e procedimentos.'],requirements:['Estudante de TI ou área relacionada.','Conhecimentos básicos de Windows e redes.','Boa comunicação e orientação para o utilizador.']}
-];
-let currentView='feed',role='student',authMode='login',authRole='student',shownCount=4,toastTimer;const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
-function switchView(view){if(view==='student'&&role==='company')view='company';if(view==='company'&&role==='student')view='student';currentView=view;$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));$$('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$$('.side-item').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$$('.mobile-nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view||(view==='company'&&b.dataset.view==='student')));if(view==='internships')renderInternships();window.scrollTo({top:0,behavior:'smooth'})}
-function openModal(title,desc,fields,submit='Guardar',handler){$('#modalTitle').textContent=title;$('#modalDescription').textContent=desc;$('#modalFields').innerHTML=fields;$('#modalSubmit').textContent=submit;$('#modalBackdrop').classList.add('open');$('#modalForm').onsubmit=e=>{e.preventDefault();if(handler)handler(new FormData(e.currentTarget));closeModal()};setTimeout(()=>$('#modalFields input,#modalFields textarea')?.focus(),50)}function closeModal(){$('#modalBackdrop').classList.remove('open')}
-function opportunityCard(o){return `<article class="card internship-card"><div class="company-logo ${o.logoClass}">${o.logo}</div><div class="internship-content"><h3>${o.title}</h3><div class="company-name">${o.company} · ${o.area}</div><div class="tag-row"><span class="tag">⌖ ${o.location}</span><span class="tag">◷ ${o.mode}</span><span class="tag green">${o.salary}</span></div><div class="muted small">Publicado recentemente · ${o.duration}</div></div><div class="internship-side"><span class="deadline">Prazo: <strong>${o.deadline}</strong></span><button class="btn btn-primary btn-sm" data-detail="${o.id}">Ver detalhes →</button></div></article>`}
-function renderInternships(){const q=($('#internshipSearch')?.value||'').toLowerCase(),loc=$('#locationFilter')?.value||'',area=$('#areaFilter')?.value||'',mode=$('#modeFilter')?.value||'';const filtered=internships.filter(o=>(`${o.title} ${o.company} ${o.area} ${o.skills.join(' ')}`.toLowerCase().includes(q))&&(!loc||o.location===loc)&&(!area||o.area===area)&&(!mode||o.mode===mode));$('#resultsCount').textContent=`${filtered.length} oportunidade${filtered.length===1?'':'s'} encontrada${filtered.length===1?'':'s'}`;$('#internshipList').innerHTML=filtered.slice(0,shownCount).map(opportunityCard).join('')||`<div class="card empty-state"><div class="empty-icon">⌕</div><h3>Não encontrámos resultados</h3><p>Experimenta alterar os termos de pesquisa ou remover alguns filtros.</p><button class="btn btn-outline" id="clearFilters">Limpar filtros</button></div>`;$('#loadMore').classList.toggle('hidden',shownCount>=filtered.length);$('#clearFilters')?.addEventListener('click',()=>{$('#internshipSearch').value='';$('#locationFilter').value='';$('#areaFilter').value='';$('#modeFilter').value='';shownCount=4;renderInternships()});bindDetailButtons()}
-function showDetail(id){const o=internships.find(x=>x.id===Number(id));if(!o)return;$('#detailContent').innerHTML=`<div class="detail-hero"><div class="company-logo ${o.logoClass}">${o.logo}</div><div style="flex:1;min-width:160px"><span class="eyebrow">${o.area} · ${o.type}</span><h1>${o.title}</h1><p>${o.company} · ${o.location}, Angola</p><div class="tag-row"><span class="tag green">${o.salary}</span><span class="tag">${o.mode}</span></div></div><button class="btn btn-primary apply-btn" data-apply="${o.id}">Candidatar-me →</button></div><div class="detail-stats"><span>⌖ ${o.location}</span><span>◷ ${o.mode}</span><span>▦ ${o.duration}</span><span>Prazo: <strong style="color:#bd7b16">${o.deadline}</strong></span></div><div class="detail-section"><h3>Sobre a oportunidade</h3><p>${o.description}</p></div><div class="detail-section"><h3>Responsabilidades</h3><ul>${o.responsibilities.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="detail-section"><h3>Requisitos</h3><ul>${o.requirements.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="detail-section"><h3>Competências valorizadas</h3>${o.skills.map(x=>`<span class="skill">${x}</span>`).join('')}</div><div class="card" style="padding:16px;background:#f5fbf7;margin-top:24px;border-color:#d9f0e3"><strong style="font-size:13px">Pronto para dar o próximo passo?</strong><p style="margin:7px 0 13px;font-size:12px;color:#6d7e8e">Revê o teu perfil e envia a tua candidatura à equipa ${o.company}.</p><button class="btn btn-primary apply-btn" data-apply="${o.id}">Candidatar-me a esta vaga →</button></div>`;switchView('detail');$$('[data-apply]').forEach(b=>b.addEventListener('click',()=>applyFor(Number(b.dataset.apply))))}
-function bindDetailButtons(){$$('[data-detail]').forEach(b=>b.onclick=()=>showDetail(b.dataset.detail))}function applyFor(id){const o=internships.find(x=>x.id===id);openModal('Candidatar-me',`Estás prestes a enviar a tua candidatura para ${o.title} na ${o.company}.`,`<div class="field"><label for="applyNote">Mensagem para a empresa (opcional)</label><textarea id="applyNote" placeholder="Conta brevemente porque esta oportunidade te interessa..."></textarea></div><div class="field"><label>Currículo anexado</label><div style="padding:13px;border:1px solid var(--line);border-radius:10px;background:#f7faf8;font-size:12px">▤ CV_Joao_Manuel.pdf <span class="tag green" style="float:right">Pronto</span></div></div>`,'Enviar candidatura',()=>{toast('Candidatura enviada com sucesso!');setTimeout(()=>toast(`A candidatura para ${o.company} está em análise.`),1500)})}
-function addComment(form){const input=form.querySelector('input'),value=input.value.trim();if(!value){toast('Escreve um comentário antes de enviar.');return}const comments=form.closest('.comments');const div=document.createElement('div');div.className='comment';const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent='JM';const body=document.createElement('div');body.className='comment-body';const strong=document.createElement('strong');strong.textContent='João Manuel';const time=document.createElement('span');time.className='comment-time';time.textContent='· agora';strong.append(time);const p=document.createElement('p');p.textContent=value;body.append(strong,p);div.append(avatar,body);comments.insertBefore(div,form);input.value='';toast('Comentário publicado.')}
-$$('.like-btn').forEach(b=>b.addEventListener('click',()=>{const post=b.closest('.feed-post'),count=post.querySelector('.likes-count');const liked=b.classList.toggle('liked');b.innerHTML=liked?'♥ Gostaste':'♡ Gostar';count.textContent=liked?'♡ 129 gostos':(post.dataset.post==='1'?'♡ 128 gostos':post.dataset.post==='2'?'♡ 86 gostos':'♡ 64 gostos')}));$$('.comment-btn').forEach(b=>b.addEventListener('click',()=>{const c=b.closest('.feed-post').querySelector('.comments');c.classList.toggle('hidden');if(!c.classList.contains('hidden'))c.querySelector('input')?.focus()}));$$('.comment-form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();addComment(f)}));$$('[data-view]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));$('#topCreate').onclick=$('#createPost').onclick=$('#composerPrompt').onclick=()=>openModal('Criar publicação','Partilha uma novidade com a comunidade Kandia.',`<div class="field"><label for="postText">O que gostarias de partilhar?</label><textarea id="postText" required placeholder="Uma conquista, uma dica de carreira ou uma novidade..."></textarea></div><div class="field"><label for="postKind">Tipo de publicação</label><select id="postKind"><option>Actualização profissional</option><option>Conquista</option><option>Oportunidade de estágio</option></select></div>`,'Publicar',fd=>{const text=fd.get('postText').trim();if(!text)return;const article=document.createElement('article');article.className='card feed-post';article.innerHTML=`<div class="post-head"><div class="avatar">JM</div><div class="post-meta"><strong>João Manuel</strong><span>Agora · ◉ Público</span></div><button class="more">···</button></div><p class="post-copy"></p><div class="post-stats"><span class="likes-count">♡ 0 gostos · <span class="comments-count">0 comentários</span></span><span>Agora</span></div><div class="post-actions"><button class="post-action like-btn">♡ Gostar</button><button class="post-action comment-btn">▢ Comentar</button></div><div class="comments hidden"><form class="comment-form"><div class="avatar">JM</div><input aria-label="Escrever comentário" placeholder="Escreve um comentário..."/><button class="send" aria-label="Enviar comentário">➤</button></form></div>`;article.querySelector('.post-copy').textContent=text;$('#view-feed').insertBefore(article,$('#view-feed').children[1]);article.querySelector('.like-btn').onclick=()=>{const btn=article.querySelector('.like-btn');btn.classList.toggle('liked');btn.innerHTML=btn.classList.contains('liked')?'♥ Gostaste':'♡ Gostar';article.querySelector('.likes-count').textContent=btn.classList.contains('liked')?'♡ 1 gosto · 0 comentários':'♡ 0 gostos · 0 comentários'};article.querySelector('.comment-btn').onclick=()=>article.querySelector('.comments').classList.toggle('hidden');article.querySelector('.comment-form').onsubmit=e=>{e.preventDefault();addComment(e.currentTarget)};toast('A tua publicação já está no feed.')});$('#sharePhoto').onclick=()=>toast('O carregamento de imagens estará disponível na versão ligada ao servidor.');$('#shareOpportunity').onclick=()=>{switchView('internships');toast('Escolhe uma oportunidade para partilhar.')};$('#backToInternships').onclick=()=>switchView('internships');$('#internshipSearch').addEventListener('input',()=>{shownCount=6;renderInternships()});['locationFilter','areaFilter','modeFilter'].forEach(id=>$('#'+id).addEventListener('change',()=>{shownCount=6;renderInternships()}));$('#loadMore').onclick=()=>{shownCount+=2;renderInternships()};$('#globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){$('#internshipSearch').value=e.target.value;switchView('internships')}});$('#globalSearch').addEventListener('focus',()=>{if(innerWidth<760)switchView('internships')});$$('.follow-btn').forEach(b=>b.onclick=()=>{const on=b.textContent==='✓';b.textContent=on?'＋':'✓';b.style.background=on?'#f2fbf6':'var(--mint)';toast(on?'Deixaste de seguir a empresa.':'Agora segues esta empresa.')});$('#suggestMore').onclick=()=>toast('Mais empresas serão apresentadas em breve.');$('#switchRole').onclick=()=>{role=role==='student'?'company':'student';$('#switchRole').innerHTML=`<span class="ico">⇄</span>${role==='student'?'Pré-visualizar empresa':'Voltar à conta de estudante'}`;$('#topCreate').classList.toggle('hidden',role==='company');$('#createPost').classList.toggle('hidden',role==='company');switchView(role==='company'?'company':'feed');toast(role==='company'?'Pré-visualização do espaço de empresa.':'Voltaste ao espaço de estudante.')};$('#mobilePublish').onclick=()=>role==='company'?openPublish():openModal('Criar publicação','Partilha uma novidade com a comunidade Kandia.',`<div class="field"><label for="postTextMobile">O que gostarias de partilhar?</label><textarea id="postTextMobile" required placeholder="Escreve a tua publicação..."></textarea></div>`,'Publicar',fd=>toast('Publicação criada.'));function openPublish(){openModal('Publicar estágio','Apresenta uma oportunidade a jovens talentos em Angola.',`<div class="field"><label for="jobTitle">Título do estágio *</label><input id="jobTitle" required placeholder="Ex.: Estágio em Desenvolvimento Web"/></div><div class="field"><label for="jobArea">Área</label><select id="jobArea"><option>Tecnologia</option><option>Finanças</option><option>Marketing</option><option>Engenharia</option></select></div><div class="field"><label for="jobLocation">Localização</label><select id="jobLocation"><option>Luanda</option><option>Benguela</option><option>Huíla</option><option>Cabinda</option></select></div><div class="field"><label for="jobMode">Modalidade</label><select id="jobMode"><option>Presencial</option><option>Híbrido</option><option>Remoto</option></select></div><div class="field"><label for="jobDesc">Descrição *</label><textarea id="jobDesc" required placeholder="Descreve a oportunidade e os requisitos..."></textarea></div>`,'Publicar estágio',fd=>toast(`Estágio “${fd.get('jobTitle')}” guardado como rascunho de demonstração.`))}$('#publishInternship').onclick=openPublish;$('#companyAll').onclick=()=>{switchView('internships');toast('A explorar oportunidades publicadas.');};$$('.candidate-btn').forEach(b=>b.onclick=()=>openModal('Candidatos à oportunidade','Exemplo de gestão de candidatos para a equipa de recrutamento.',`<div class="suggestion"><div class="avatar">JM</div><div class="suggestion-info"><strong>João Manuel</strong><span>Engenharia Informática · Python, Django</span></div><select class="filter-select candidate-status"><option>Em análise</option><option>Entrevista</option><option>Seleccionado</option><option>Não seleccionado</option></select></div><div class="suggestion"><div class="avatar orange">AS</div><div class="suggestion-info"><strong>Ana Sofia</strong><span>Engenharia Informática · Redes, Linux</span></div><select class="filter-select candidate-status"><option>Entrevista</option><option>Em análise</option><option>Seleccionado</option><option>Não seleccionado</option></select></div>`,'Guardar estados',()=>toast('Estados dos candidatos actualizados.')));$('#allApplications').onclick=()=>toast('Estás a ver as candidaturas mais recentes.');$('#markRead').onclick=()=>{$$('#notificationList .dot').forEach(d=>d.remove());toast('Todas as notificações foram marcadas como lidas.')};$('#editProfile').onclick=$('#editBio').onclick=()=>openModal('Editar perfil','Mantém as tuas informações profissionais actualizadas.',`<div class="field"><label for="fullName">Nome completo</label><input id="fullName" value="João Manuel" required/></div><div class="field"><label for="course">Curso</label><input id="course" value="Engenharia Informática"/></div><div class="field"><label for="bio">Biografia</label><textarea id="bio">Estudante de Engenharia Informática apaixonado por desenvolvimento web e soluções digitais.</textarea></div>`,'Guardar alterações',fd=>{const n=fd.get('fullName');if(n){$$('.side-profile h3')[0].textContent=n;$('.profile-header h1').textContent=n;toast('Perfil actualizado com sucesso.')}});$('#editSkills').onclick=()=>openModal('Adicionar competências','Separa as competências por vírgulas.',`<div class="field"><label for="skills">Competências</label><input id="skills" placeholder="Ex.: Python, Django, SQL"/></div>`,'Adicionar',()=>toast('Competências actualizadas.'));$('#updateCV').onclick=()=>openModal('Actualizar currículo','Escolhe o ficheiro de CV que pretendes associar ao teu perfil.',`<div class="field"><label for="cvFile">Ficheiro PDF</label><input type="file" id="cvFile" accept=".pdf"/></div>`,'Guardar CV',()=>toast('O carregamento de ficheiros ficará disponível após integração com o servidor.'));
-function showAuth(mode='login',which='student'){authMode=mode;authRole=which;$('#appShell').classList.add('hidden');$('#authScreen').classList.add('active');renderAuth();}function renderAuth(){$('#authTitle').textContent=authMode==='login'?'Bem-vindo de volta':authMode==='register'?'Cria a tua conta':authMode==='forgot'?'Recuperar palavra-passe':'Define uma nova palavra-passe';$('#authSubtitle').textContent=authMode==='login'?'Entra na tua conta e continua a construir o teu caminho.':authMode==='register'?'Junta-te à comunidade que liga talento a oportunidades.':authMode==='forgot'?'Vamos enviar-te instruções para recuperares o acesso.':'Escolhe uma palavra-passe segura para a tua conta.';$('.auth-switch').classList.toggle('hidden',authMode==='forgot'||authMode==='reset');$$('[data-role]').forEach(b=>b.classList.toggle('selected',b.dataset.role===authRole));let f='';if(authMode==='login')f=`<div class="field"><label for="authEmail">Email</label><input id="authEmail" type="email" required placeholder="nome@exemplo.com" autocomplete="email"/></div><div class="field"><label for="authPassword">Palavra-passe</label><input id="authPassword" type="password" required placeholder="A tua palavra-passe" autocomplete="current-password"/></div>`;else if(authMode==='register'){if(authRole==='student')f+=`<div class="field"><label for="regName">Nome completo</label><input id="regName" required placeholder="O teu nome" autocomplete="name"/></div>`;else f+=`<div class="field"><label for="regName">Nome da empresa</label><input id="regName" required placeholder="Nome oficial da empresa"/></div>`;f+=`<div class="field"><label for="regEmail">Email ${authRole==='company'?'profissional':''}</label><input id="regEmail" type="email" required placeholder="nome@exemplo.com" autocomplete="email"/></div>`;if(authRole==='student')f+=`<div class="field"><label for="regInstitution">Instituição de ensino</label><input id="regInstitution" required placeholder="Ex.: Universidade Agostinho Neto"/></div>`;else f+=`<div class="field"><label for="regNif">NIF da empresa</label><input id="regNif" required placeholder="Número de identificação fiscal"/></div>`;f+=`<div class="field"><label for="regPassword">Criar palavra-passe</label><input id="regPassword" type="password" minlength="8" required placeholder="Mínimo de 8 caracteres" autocomplete="new-password"/></div>`}else if(authMode==='forgot')f=`<div class="field"><label for="recoverEmail">Email associado à conta</label><input id="recoverEmail" type="email" required placeholder="nome@exemplo.com"/></div>`;else f=`<div class="field"><label for="newPassword">Nova palavra-passe</label><input id="newPassword" type="password" minlength="8" required placeholder="Mínimo de 8 caracteres"/></div><div class="field"><label for="confirmPassword">Confirmar palavra-passe</label><input id="confirmPassword" type="password" minlength="8" required placeholder="Repete a palavra-passe"/></div>`;$('#authFields').innerHTML=f;$('#authSubmit').textContent=authMode==='login'?'Entrar na minha conta →':authMode==='register'?'Criar conta →':authMode==='forgot'?'Enviar instruções →':'Guardar nova palavra-passe';$('#authBottom').innerHTML=authMode==='login'?'Ainda não tens conta? <button type="button" id="switchAuth">Criar conta</button>':authMode==='register'?'Já tens uma conta? <button type="button" id="switchAuth">Entrar</button>':'Lembraste-te da palavra-passe? <button type="button" id="switchAuth">Entrar</button>';$('#switchAuth').onclick=()=>{authMode=authMode==='register'?'login':'register';renderAuth()};$('#forgotPassword').classList.toggle('hidden',authMode!=='login');$('#forgotPassword').onclick=()=>{authMode='forgot';renderAuth()};$('#authForm').onsubmit=e=>{e.preventDefault();if(authMode==='login'){toast('Demonstração: sessão iniciada.');$('#authScreen').classList.remove('active');$('#appShell').classList.remove('hidden');switchView('feed')}else if(authMode==='register'){toast('Conta de demonstração criada. Bem-vindo à Kandia!');$('#authScreen').classList.remove('active');$('#appShell').classList.remove('hidden');switchView('feed')}else if(authMode==='forgot'){toast('Se o email existir, receberás instruções de recuperação.');authMode='reset';renderAuth()}else{if($('#newPassword').value!==$('#confirmPassword').value){toast('As palavras-passe não coincidem.');return}toast('Palavra-passe alterada. Já podes entrar.');authMode='login';renderAuth()}}}$$('[data-role]').forEach(b=>b.onclick=()=>{authRole=b.dataset.role;renderAuth()});$('#backToApp').onclick=()=>{$('#authScreen').classList.remove('active');$('#appShell').classList.remove('hidden')};$('#modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});renderInternships();bindDetailButtons();
-</script></body></html>
+      <nav class="desktop-links" aria-label="Navegação principal">
+        <button class="navlink active" data-view="feed">▤ Feed</button>
+        <button class="navlink" data-view="internships">⌕ Estágios</button>
+        <button class="navlink" data-view="student">▦ Painel</button>
+      </nav>
+
+      <div class="top-actions">
+        <button class="iconbtn" data-view="notifications" aria-label="Notificações">♧<span class="dot"></span></button>
+        <button class="avatar" data-view="profile" aria-label="Abrir perfil">JM</button>
+      </div>
+    </header>
+
+    <div class="layout" id="mainLayout">
+      <aside class="sidebar">
+        <section class="side-card side-profile">
+          <div class="avatar">JM</div>
+          <h3>João Manuel</h3>
+          <div class="muted small">Estudante de Engenharia Informática</div>
+          <div class="profile-progress"><span></span></div>
+          <div class="muted small">Perfil 72% completo</div>
+          <button class="text-link" style="margin-top:12px" data-view="profile">Completar perfil →</button>
+        </section>
+
+        <section class="side-card side-menu">
+          <button class="side-item active" data-view="feed"><span class="ico">▤</span>Feed principal</button>
+          <button class="side-item" data-view="internships"><span class="ico">⌕</span>Explorar estágios</button>
+          <button class="side-item" data-view="student"><span class="ico">▦</span>As minhas candidaturas</button>
+          <button class="side-item" data-view="notifications"><span class="ico">♧</span>Notificações <span class="tag green" style="margin-left:auto">3</span></button>
+          <button class="side-item" data-view="profile"><span class="ico">◎</span>O meu perfil</button>
+          <button class="side-item" id="switchRole"><span class="ico">⇄</span>Pré-visualizar empresa</button>
+        </section>
+
+        <section class="side-tip">
+          <strong>O teu próximo passo?</strong>
+          <p>Um perfil completo aumenta as tuas hipóteses de ser notado por recrutadores.</p>
+          <button data-view="profile">Melhorar perfil ↗</button>
+        </section>
+      </aside>
+
+      <main class="main">
+        <section class="view active" id="view-feed">
+          <section class="card post-composer" aria-label="Criar publicação">
+            <div class="composer-top">
+              <div class="avatar">JM</div>
+              <button type="button" class="composer-prompt" id="composerOpen">Partilha uma ideia ou conquista profissional...</button>
+            </div>
+            <div class="composer-actions">
+              <button type="button" class="composer-action" id="composerPhoto">▧ <span>Foto</span></button>
+              <button type="button" class="composer-action" id="composerOpportunity">↗ <span>Partilhar oportunidade</span></button>
+              <button type="button" class="btn btn-primary composer-share" id="composerShare">Publicar</button>
+            </div>
+            <input type="file" id="composerPhotoInput" accept="image/*" hidden>
+          </section>
+          <article class="card feed-post" data-post="1">
+            <div class="post-head">
+              <div class="company-logo">ANG</div>
+              <div class="post-meta">
+                <strong>Angola Cables <span class="tag green" style="margin-left:5px">Empresa</span></strong>
+                <span>Há 28 min · <span>◉ Público</span></span>
+              </div>
+              <button class="more" aria-label="Mais opções">···</button>
+            </div>
+
+            <p class="post-copy">O teu talento pode ligar Angola ao mundo. 🌍 Estamos à procura de jovens curiosos, com vontade de aprender e paixão por tecnologia, para integrar a nossa equipa de inovação em Luanda.
+
+Se estás a construir o teu caminho em TI, esta oportunidade pode ser o teu ponto de partida.</p>
+
+            <div class="post-image tech">
+              <div class="image-copy">
+                <span class="eyebrow">O futuro é conectado</span>
+                <h3>Constrói o que<br>vem a seguir.</h3>
+                <p>Aprende com equipas que ligam continentes.</p>
+              </div>
+              <div class="abstract-art">⌘</div>
+            </div>
+
+            <div class="opportunity-preview">
+              <div class="company-logo blue">AC</div>
+              <div class="opp-info">
+                <strong>Estágio em Redes e Sistemas</strong>
+                <span>Luanda · Híbrido · 6 meses</span>
+                <div class="tag-row">
+                  <span class="tag green">Bolsa incluída</span>
+                  <span class="tag">Tecnologia</span>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm" data-detail="0">Ver oportunidade ↗</button>
+            </div>
+
+            <div class="post-stats">
+              <span><span class="likes-count">♡ 128 gostos</span> · <span class="comments-count">24 comentários</span></span>
+              <span>1,2 mil visualizações</span>
+            </div>
+
+            <div class="post-actions">
+              <button class="post-action like-btn">♡ Gostar</button>
+              <button class="post-action comment-btn">▢ Comentar</button>
+            </div>
+
+            <div class="comments">
+              <div class="comment">
+                <div class="avatar orange">AS</div>
+                <div class="comment-body">
+                  <strong>Ana Sofia <span class="comment-time">· há 12 min</span></strong>
+                  <p>Excelente iniciativa! Este tipo de oportunidade faz mesmo a diferença para quem está a começar. 👏</p>
+                </div>
+              </div>
+
+              <div class="comment">
+                <div class="avatar purple">MC</div>
+                <div class="comment-body">
+                  <strong>Mateus Costa <span class="comment-time">· há 8 min</span></strong>
+                  <p>Gostava de saber se aceitam estudantes do 3.º ano.</p>
+                </div>
+              </div>
+
+              <form class="comment-form">
+                <div class="avatar">JM</div>
+                <input aria-label="Escrever comentário" placeholder="Escreve um comentário...">
+                <button class="send" aria-label="Enviar comentário">➤</button>
+              </form>
+            </div>
+          </article>
+
+          <article class="card feed-post" data-post="2">
+            <div class="post-head">
+              <div class="company-logo orange">BFA</div>
+              <div class="post-meta">
+                <strong>Banco de Fomento Angola <span class="tag green" style="margin-left:5px">Empresa</span></strong>
+                <span>Há 2 horas · ◉ Público</span>
+              </div>
+              <button class="more" aria-label="Mais opções">···</button>
+            </div>
+
+            <p class="post-copy">A próxima geração de profissionais financeiros começa com curiosidade, rigor e vontade de fazer diferente. 📈
+
+Abrimos candidaturas para o nosso programa de estágio em análise de dados. Queremos conhecer estudantes que transformam números em decisões.</p>
+
+            <div class="opportunity-preview">
+              <div class="company-logo orange">BFA</div>
+              <div class="opp-info">
+                <strong>Estágio em Análise de Dados</strong>
+                <span>Luanda · Presencial · 4 meses</span>
+                <div class="tag-row">
+                  <span class="tag">Finanças</span>
+                  <span class="tag green">12 vagas</span>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-sm" data-detail="1">Ver oportunidade ↗</button>
+            </div>
+
+            <div class="post-stats">
+              <span><span class="likes-count">♡ 86 gostos</span> · <span class="comments-count">11 comentários</span></span>
+              <span>743 visualizações</span>
+            </div>
+
+            <div class="post-actions">
+              <button class="post-action like-btn">♡ Gostar</button>
+              <button class="post-action comment-btn">▢ Comentar</button>
+            </div>
+
+            <div class="comments hidden">
+              <form class="comment-form">
+                <div class="avatar">JM</div>
+                <input aria-label="Escrever comentário" placeholder="Escreve um comentário...">
+                <button class="send" aria-label="Enviar comentário">➤</button>
+              </form>
+            </div>
+          </article>
+
+          <article class="card feed-post" data-post="3">
+            <div class="post-head">
+              <div class="company-logo purple">UNIT</div>
+              <div class="post-meta">
+                <strong>Universidade Agostinho Neto</strong>
+                <span>Ontem · ◉ Público</span>
+              </div>
+              <button class="more" aria-label="Mais opções">···</button>
+            </div>
+
+            <p class="post-copy">Dica de carreira da semana: não esperes por dominar todas as ferramentas para te candidatares. Mostra o que já sabes, explica o que queres aprender e deixa o teu portefólio falar por ti. 💡</p>
+
+            <div class="post-stats">
+              <span><span class="likes-count">♡ 64 gostos</span> · <span class="comments-count">8 comentários</span></span>
+              <span>502 visualizações</span>
+            </div>
+
+            <div class="post-actions">
+              <button class="post-action like-btn">♡ Gostar</button>
+              <button class="post-action comment-btn">▢ Comentar</button>
+            </div>
+
+            <div class="comments hidden">
+              <form class="comment-form">
+                <div class="avatar">JM</div>
+                <input aria-label="Escrever comentário" placeholder="Escreve um comentário...">
+                <button class="send" aria-label="Enviar comentário">➤</button>
+              </form>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-internships">
+          <div class="page-heading">
+            <div>
+              <h1>Explorar estágios</h1>
+              <p>Encontra a oportunidade certa para começares.</p>
+            </div>
+            <span class="tag green">Angola 🇦🇴</span>
+          </div>
+
+          <div class="filters">
+            <label class="search-field">⌕ <input id="internshipSearch" placeholder="Cargo, empresa ou competência..." aria-label="Pesquisar estágios"></label>
+            <select class="filter-select" id="locationFilter" aria-label="Filtrar localização">
+              <option value="">Todas as localizações</option>
+              <option>Luanda</option><option>Benguela</option><option>Huíla</option><option>Cabinda</option>
+            </select>
+            <select class="filter-select" id="areaFilter" aria-label="Filtrar área">
+              <option value="">Todas as áreas</option>
+              <option>Tecnologia</option><option>Finanças</option><option>Marketing</option><option>Engenharia</option>
+            </select>
+            <select class="filter-select" id="modeFilter" aria-label="Filtrar modalidade">
+              <option value="">Modalidade</option>
+              <option>Híbrido</option><option>Presencial</option><option>Remoto</option>
+            </select>
+          </div>
+
+          <div class="results-line">
+            <span id="resultsCount">6 oportunidades encontradas</span>
+            <select class="filter-select" style="height:34px" aria-label="Ordenar resultados">
+              <option>Mais recentes</option><option>Prazo mais próximo</option>
+            </select>
+          </div>
+
+          <div id="internshipList"></div>
+          <div style="text-align:center;margin:20px">
+            <button class="btn btn-outline" id="loadMore">Carregar mais oportunidades ↓</button>
+          </div>
+        </section>
+
+        <section class="view" id="view-detail">
+          <button class="text-link" id="backToInternships" style="margin-bottom:16px">← Voltar às oportunidades</button>
+          <div class="card detail-card" id="detailContent"></div>
+        </section>
+
+        <section class="view" id="view-student">
+          <div class="page-heading">
+            <div><h1>Olá, João 👋</h1><p>Acompanha o progresso das tuas candidaturas.</p></div>
+            <button class="btn btn-primary" data-view="internships">＋ Encontrar estágio</button>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon">▤</span><span class="tag">Total</span></div><div class="kpi-value">12</div><div class="kpi-label">Total de candidaturas</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon orange">◷</span></div><div class="kpi-value">5</div><div class="kpi-label">Em análise</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon blue">♧</span></div><div class="kpi-value">2</div><div class="kpi-label">Entrevistas</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon purple">✦</span></div><div class="kpi-value">1</div><div class="kpi-label">Selecionado</div></div>
+          </div>
+
+          <section class="card dashboard-section">
+            <div class="section-head"><h3>Candidaturas recentes</h3><button class="text-link" id="allApplications">Ver todas →</button></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Oportunidade</th><th>Data</th><th>Estado</th><th>Acção</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Estágio em Redes e Sistemas</strong><br><span class="muted small">Angola Cables</span></td><td>10 Out, 2026</td><td><span class="status blue">Em análise</span></td><td><button class="text-link" data-detail="0">Detalhes</button></td></tr>
+                  <tr><td><strong>Desenvolvimento Web</strong><br><span class="muted small">Xtech Angola</span></td><td>08 Out, 2026</td><td><span class="status">Entrevista</span></td><td><button class="text-link" data-detail="2">Detalhes</button></td></tr>
+                  <tr><td><strong>Estágio em Análise de Dados</strong><br><span class="muted small">Banco BFA</span></td><td>02 Out, 2026</td><td><span class="status green">Selecionado</span></td><td><button class="text-link" data-detail="1">Detalhes</button></td></tr>
+                  <tr><td><strong>Assistente de Marketing</strong><br><span class="muted small">Unitel</span></td><td>28 Set, 2026</td><td><span class="status gray">Submetida</span></td><td><button class="text-link" data-detail="3">Detalhes</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card dashboard-section">
+            <div class="section-head"><h3>Melhora o teu perfil</h3><span class="tag green">72% completo</span></div>
+            <div class="profile-progress"><span></span></div>
+            <p class="muted small" style="line-height:1.6">Adiciona o teu CV e mais competências para te destacares junto das empresas.</p>
+            <button class="btn btn-outline btn-sm" data-view="profile">Completar perfil →</button>
+          </section>
+        </section>
+
+        <section class="view" id="view-company">
+          <div class="page-heading"><div><h1>Painel da empresa</h1><p>Bem-vinda de volta, equipa de recrutamento.</p></div><button class="btn btn-primary" id="publishInternship">＋ Publicar estágio</button></div>
+          <div class="kpi-grid">
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon">▤</span></div><div class="kpi-value">8</div><div class="kpi-label">Estágios publicados</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon blue">♧</span></div><div class="kpi-value">146</div><div class="kpi-label">Total de candidaturas</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon orange">◷</span></div><div class="kpi-value">32</div><div class="kpi-label">Candidaturas em análise</div></div>
+            <div class="card kpi"><div class="kpi-top"><span class="kpi-icon purple">✦</span></div><div class="kpi-value">9</div><div class="kpi-label">Candidatos selecionados</div></div>
+          </div>
+          <section class="card dashboard-section">
+            <div class="section-head"><h3>As minhas oportunidades</h3><button class="text-link" id="companyAll">Ver todas →</button></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Oportunidade</th><th>Candidatos</th><th>Prazo</th><th>Estado</th><th>Acções</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Redes e Sistemas</strong><br><span class="muted small">Tecnologia · Luanda</span></td><td>34</td><td>28 Out, 2026</td><td><span class="status green">Activa</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr>
+                  <tr><td><strong>Suporte Técnico</strong><br><span class="muted small">Tecnologia · Luanda</span></td><td>21</td><td>02 Nov, 2026</td><td><span class="status green">Activa</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr>
+                  <tr><td><strong>Analista de Dados</strong><br><span class="muted small">Dados · Híbrido</span></td><td>48</td><td>20 Out, 2026</td><td><span class="status">A terminar</span></td><td><button class="text-link candidate-btn">Candidatos</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="card dashboard-section">
+            <div class="section-head"><h3>Actividade recente</h3><button class="text-link" data-view="notifications">Ver tudo →</button></div>
+            <div class="suggestion"><div class="avatar">JM</div><div class="suggestion-info"><strong>João Manuel candidatou-se</strong><span>Estágio em Redes e Sistemas · há 18 min</span></div><button class="btn btn-outline btn-sm candidate-btn">Rever</button></div>
+            <div class="suggestion"><div class="avatar orange">AS</div><div class="suggestion-info"><strong>Ana Sofia foi seleccionada</strong><span>Estágio em Suporte Técnico · há 2 h</span></div><span class="status green">Seleccionada</span></div>
+          </section>
+        </section>
+
+        <section class="view" id="view-profile">
+          <div class="card" style="overflow:hidden">
+            <div class="profile-cover"></div>
+            <div class="profile-main">
+              <div class="profile-header">
+                <div class="avatar">JM</div>
+                <div style="padding-bottom:7px">
+                  <h1>João Manuel</h1>
+                  <p>Estudante de Engenharia Informática</p>
+                  <p>📍 Luanda, Angola · Universidade Agostinho Neto</p>
+                </div>
+                <button class="btn btn-outline btn-sm" id="editProfile">✎ Editar perfil</button>
+              </div>
+              <div class="tag-row" style="margin-top:17px"><span class="tag green">Aberto a estágios</span><span class="tag">72% perfil completo</span></div>
+            </div>
+          </div>
+
+          <div class="profile-columns">
+            <section class="card info-panel">
+              <h3>Sobre mim <button class="text-link" style="float:right" id="editBio">Editar</button></h3>
+              <p class="muted" style="font-size:12px;line-height:1.8">Estudante de Engenharia Informática apaixonado por desenvolvimento web, bases de dados e criação de soluções digitais com impacto. Procuro uma oportunidade para aprender com profissionais experientes e contribuir com a minha energia e curiosidade.</p>
+              <div class="info-row"><label>INSTITUIÇÃO</label><strong>Universidade Agostinho Neto</strong></div>
+              <div class="info-row"><label>CURSO</label><strong>Engenharia Informática · 3.º ano</strong></div>
+              <div class="info-row"><label>ANO ACADÉMICO</label><strong>2026 / 2027</strong></div>
+            </section>
+
+            <section class="card info-panel">
+              <h3>Competências <button class="text-link" style="float:right" id="editSkills">+ Adicionar</button></h3>
+              <div class="skill-list"><span class="tag green">Python</span><span class="tag green">Django</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">Git</span></div>
+              <div class="info-row" style="margin-top:24px">
+                <label>CURRÍCULO (CV)</label>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-size:22px">▤</span>
+                  <div><strong>CV_Joao_Manuel.pdf</strong><div class="muted small" style="margin-top:4px">Actualizado em 09 Out, 2026</div></div>
+                  <button class="text-link" id="updateCV">Actualizar</button>
+                </div>
+              </div>
+              <div class="info-row"><label>PORTFÓLIO</label><strong style="color:var(--green-dark)">github.com/joaomanuel ↗</strong></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="view-notifications">
+          <div class="page-heading"><div><h1>Notificações</h1><p>As novidades importantes para a tua carreira.</p></div><button class="text-link" id="markRead">Marcar tudo como lido</button></div>
+          <div class="card dashboard-section" id="notificationList">
+            <div class="suggestion"><div class="avatar">✓</div><div class="suggestion-info"><strong>A tua candidatura está em análise</strong><span>Angola Cables · Estágio em Redes e Sistemas · há 18 min</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div>
+            <div class="suggestion"><div class="avatar orange">♧</div><div class="suggestion-info"><strong>Tens uma nova sugestão de oportunidade</strong><span>Desenvolvimento Web · Xtech Angola · há 2 h</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div>
+            <div class="suggestion"><div class="avatar purple">✦</div><div class="suggestion-info"><strong>O teu perfil foi visto por uma empresa</strong><span>Recrutamento BFA · Ontem</span></div><span class="dot" style="position:static;border:0;width:8px;height:8px"></span></div>
+            <div class="suggestion"><div class="avatar blue">♡</div><div class="suggestion-info"><strong>A tua publicação recebeu 12 gostos</strong><span>Comunidade Kandia · Há 2 dias</span></div></div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="right-rail">
+        <section class="card right-card">
+          <div class="right-title"><h3>Empresas para conhecer</h3><button class="text-link" id="suggestMore">Ver todas</button></div>
+          <div class="suggestion"><div class="company-logo orange">BFA</div><div class="suggestion-info"><strong>Banco BFA</strong><span>Serviços financeiros</span></div><button class="add follow-btn" aria-label="Seguir Banco BFA">＋</button></div>
+          <div class="suggestion"><div class="company-logo blue">UTL</div><div class="suggestion-info"><strong>Unitel</strong><span>Telecomunicações</span></div><button class="add follow-btn" aria-label="Seguir Unitel">＋</button></div>
+          <div class="suggestion"><div class="company-logo">ANG</div><div class="suggestion-info"><strong>Angola Cables</strong><span>Tecnologia e conectividade</span></div><button class="add follow-btn" aria-label="Seguir Angola Cables">＋</button></div>
+        </section>
+
+        <section class="card right-card">
+          <div class="right-title"><h3>Oportunidades em destaque</h3><button class="text-link" data-view="internships">Ver todas</button></div>
+          <div class="mini-internship"><span class="eyebrow">TECNOLOGIA · LUANDA</span><strong>Estágio em Desenvolvimento Web</strong><span>Xtech Angola · Híbrido</span><br><span class="tag green">Prazo: 30 Out</span></div>
+          <div class="mini-internship"><span class="eyebrow" style="color:#b47a1b">FINANÇAS · LUANDA</span><strong>Analista de Dados Júnior</strong><span>Banco BFA · Presencial</span><br><span class="tag">12 vagas</span></div>
+          <div class="mini-internship"><span class="eyebrow" style="color:#4766b5">MARKETING · BENGUELA</span><strong>Assistente de Marketing</strong><span>Refriango · Presencial</span><br><span class="tag">Bolsa incluída</span></div>
+        </section>
+
+        <div class="footer-note">Sobre · Ajuda · Privacidade · Termos<br>© 2026 Kandia · Feito em Angola 🇦🇴</div>
+      </aside>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navegação móvel">
+      <button class="active" data-view="feed"><span class="mobile-ico">▤</span><span>Feed</span></button>
+      <button data-view="internships"><span class="mobile-ico">⌕</span><span>Estágios</span></button>
+      <button data-view="notifications"><span class="mobile-ico">♧</span><span>Notificações</span></button>
+      <button type="button" id="mobilePublish"><span class="mobile-ico">＋</span><span>Publicar</span></button>
+      <button data-view="profile"><span class="mobile-ico">◎</span><span>Perfil</span></button>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal">
+        <h2 id="modalTitle">Criar publicação</h2>
+        <p id="modalDescription">Partilha uma novidade com a comunidade Kandia.</p>
+        <form id="modalForm">
+          <div id="modalFields"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-outline" id="cancelModal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="modalSubmit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-screen" id="authScreen">
+    <aside class="auth-aside">
+      <div class="brand"><span class="brand-mark">k.</span> kandia</div>
+      <div>
+        <h1>O teu talento merece <span class="green-text">uma oportunidade.</span></h1>
+        <p>Descobre estágios, conhece empresas e constrói o teu futuro profissional. Tudo começa com uma ligação.</p>
+      </div>
+      <div class="auth-quote">“Grandes carreiras começam com pequenas oportunidades.”<br><br>Feito para o talento angolano. 🇦🇴</div>
+    </aside>
+
+    <main class="auth-main">
+      <form class="auth-form" id="authForm">
+        <button type="button" class="text-link" id="backToApp">← Voltar à aplicação</button>
+        <h2 id="authTitle" style="margin-top:26px">Bem-vindo de volta</h2>
+        <p id="authSubtitle">Entra na tua conta e continua a construir o teu caminho.</p>
+        <div class="auth-switch">
+          <button type="button" class="selected" data-role="student">Sou estudante</button>
+          <button type="button" data-role="company">Sou empresa</button>
+        </div>
+        <div id="authFields"></div>
+        <button class="btn btn-primary" style="width:100%;margin-top:10px" id="authSubmit">Entrar na minha conta →</button>
+        <div class="auth-bottom" id="authBottom">Ainda não tens conta? <button type="button" id="switchAuth">Criar conta</button></div>
+        <div class="auth-bottom"><button type="button" id="forgotPassword">Esqueci-me da palavra-passe</button></div>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const internships = [
+      {
+        id: 0, title: 'Estágio em Redes e Sistemas', company: 'Angola Cables', logo: 'AC', logoClass: '',
+        location: 'Luanda', area: 'Tecnologia', mode: 'Híbrido', deadline: '28 Out, 2026', days: 15,
+        type: 'Estágio profissional', duration: '6 meses', salary: 'Bolsa incluída',
+        skills: ['Redes TCP/IP', 'Linux', 'Segurança informática'],
+        description: 'Integra uma equipa que opera infraestruturas de conectividade internacional. Vais aprender com especialistas e participar em projectos reais de redes, sistemas e segurança.',
+        responsibilities: ['Apoiar a monitorização de redes e serviços.', 'Participar na configuração e manutenção de sistemas.', 'Documentar procedimentos técnicos e colaborar na resolução de incidentes.'],
+        requirements: ['Estudante de Engenharia Informática ou área relacionada.', 'Conhecimentos básicos de redes e sistemas operativos.', 'Vontade de aprender, trabalhar em equipa e resolver problemas.']
+      },
+      {
+        id: 1, title: 'Estágio em Análise de Dados', company: 'Banco BFA', logo: 'BFA', logoClass: 'orange',
+        location: 'Luanda', area: 'Finanças', mode: 'Presencial', deadline: '24 Out, 2026', days: 11,
+        type: 'Estágio profissional', duration: '4 meses', salary: 'Bolsa incluída',
+        skills: ['Excel', 'SQL', 'Power BI'],
+        description: 'Transforma dados em informação útil para decisões de negócio. Vais trabalhar com equipas multidisciplinares e conhecer processos reais do sector financeiro.',
+        responsibilities: ['Preparar e validar conjuntos de dados.', 'Criar relatórios e visualizações de indicadores.', 'Apoiar a equipa na análise de tendências.'],
+        requirements: ['Formação em Informática, Matemática, Economia ou similar.', 'Conhecimentos de Excel e SQL.', 'Pensamento analítico e atenção ao detalhe.']
+      },
+      {
+        id: 2, title: 'Estágio em Desenvolvimento Web', company: 'Xtech Angola', logo: 'XT', logoClass: 'blue',
+        location: 'Luanda', area: 'Tecnologia', mode: 'Híbrido', deadline: '30 Out, 2026', days: 17,
+        type: 'Estágio curricular', duration: '3 meses', salary: 'Negociável',
+        skills: ['Python', 'Django', 'JavaScript'],
+        description: 'Ajuda a desenvolver produtos digitais utilizados por empresas angolanas. Vais colaborar em funcionalidades de frontend e backend com acompanhamento de programadores séniores.',
+        responsibilities: ['Implementar e testar funcionalidades web.', 'Participar em revisões de código e reuniões técnicas.', 'Trabalhar com APIs e bases de dados relacionais.'],
+        requirements: ['Conhecimentos de HTML, CSS e JavaScript.', 'Noções de uma framework backend.', 'Portefólio académico ou projectos pessoais valorizados.']
+      },
+      {
+        id: 3, title: 'Assistente de Marketing Digital', company: 'Refriango', logo: 'RF', logoClass: 'orange',
+        location: 'Benguela', area: 'Marketing', mode: 'Presencial', deadline: '05 Nov, 2026', days: 23,
+        type: 'Estágio profissional', duration: '5 meses', salary: 'Bolsa incluída',
+        skills: ['Redes sociais', 'Canva', 'Analytics'],
+        description: 'Apoia campanhas digitais de marcas nacionais e aprende a transformar ideias criativas em comunicação que chega às pessoas.',
+        responsibilities: ['Apoiar o planeamento de conteúdos.', 'Acompanhar métricas de campanhas digitais.', 'Colaborar na preparação de materiais de comunicação.'],
+        requirements: ['Formação em Marketing, Comunicação ou área próxima.', 'Boa comunicação escrita e criatividade.', 'Interesse por conteúdos digitais.']
+      },
+      {
+        id: 4, title: 'Estágio em Engenharia Civil', company: 'Omatapalo', logo: 'OM', logoClass: 'purple',
+        location: 'Huíla', area: 'Engenharia', mode: 'Presencial', deadline: '12 Nov, 2026', days: 30,
+        type: 'Estágio curricular', duration: '6 meses', salary: 'A definir',
+        skills: ['AutoCAD', 'Excel', 'Planeamento'],
+        description: 'Participa no acompanhamento de obra e aprende processos de planeamento, controlo de qualidade e coordenação de equipas.',
+        responsibilities: ['Apoiar medições e relatórios de obra.', 'Acompanhar actividades de execução.', 'Organizar documentação técnica.'],
+        requirements: ['Estudante de Engenharia Civil.', 'Conhecimentos de desenho técnico.', 'Disponibilidade para actividade presencial.']
+      },
+      {
+        id: 5, title: 'Estágio em Suporte Técnico', company: 'Unitel', logo: 'UTL', logoClass: 'blue',
+        location: 'Luanda', area: 'Tecnologia', mode: 'Presencial', deadline: '18 Nov, 2026', days: 36,
+        type: 'Estágio profissional', duration: '4 meses', salary: 'Bolsa incluída',
+        skills: ['Windows', 'Redes', 'Atendimento'],
+        description: 'Aprende a prestar suporte técnico e a resolver desafios tecnológicos num ambiente dinâmico e colaborativo.',
+        responsibilities: ['Registar e acompanhar pedidos de suporte.', 'Apoiar a configuração de equipamentos.', 'Documentar soluções e procedimentos.'],
+        requirements: ['Estudante de TI ou área relacionada.', 'Conhecimentos básicos de Windows e redes.', 'Boa comunicação e orientação para o utilizador.']
+      }
+    ];
+
+    let currentView = 'feed';
+    let role = 'student';
+    let authMode = 'login';
+    let authRole = 'student';
+    let shownCount = 4;
+    let toastTimer;
+
+    const $ = selector => document.querySelector(selector);
+    const $$ = selector => [...document.querySelectorAll(selector)];
+
+    function toast(message) {
+      const element = $('#toast');
+      element.textContent = message;
+      element.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => element.classList.remove('show'), 2600);
+    }
+
+    function switchView(view) {
+      if (view === 'student' && role === 'company') view = 'company';
+      if (view === 'company' && role === 'student') view = 'student';
+
+      currentView = view;
+      $$('.view').forEach(section => section.classList.toggle('active', section.id === `view-${view}`));
+      $$('[data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+      $$('.side-item').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+      $$('.mobile-nav button').forEach(button => {
+        button.classList.toggle('active', button.dataset.view === view || (view === 'company' && button.dataset.view === 'student'));
+      });
+
+      if (view === 'internships') renderInternships();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openModal(title, description, fields, submitLabel = 'Guardar', handler) {
+      $('#modalTitle').textContent = title;
+      $('#modalDescription').textContent = description;
+      $('#modalFields').innerHTML = fields;
+      $('#modalSubmit').textContent = submitLabel;
+      $('#modalBackdrop').classList.add('open');
+
+      $('#modalForm').onsubmit = event => {
+        event.preventDefault();
+        if (handler) handler(new FormData(event.currentTarget));
+        closeModal();
+      };
+
+      setTimeout(() => $('#modalFields input, #modalFields textarea')?.focus(), 50);
+    }
+
+    function closeModal() {
+      $('#modalBackdrop').classList.remove('open');
+    }
+
+    function opportunityCard(opportunity) {
+      return `
+        <article class="card internship-card">
+          <div class="company-logo ${opportunity.logoClass}">${opportunity.logo}</div>
+          <div class="internship-content">
+            <h3>${opportunity.title}</h3>
+            <div class="company-name">${opportunity.company} · ${opportunity.area}</div>
+            <div class="tag-row">
+              <span class="tag">⌖ ${opportunity.location}</span>
+              <span class="tag">◷ ${opportunity.mode}</span>
+              <span class="tag green">${opportunity.salary}</span>
+            </div>
+            <div class="muted small">Publicado recentemente · ${opportunity.duration}</div>
+          </div>
+          <div class="internship-side">
+            <span class="deadline">Prazo: <strong>${opportunity.deadline}</strong></span>
+            <button class="btn btn-primary btn-sm" data-detail="${opportunity.id}">Ver detalhes →</button>
+          </div>
+        </article>`;
+    }
+
+    function renderInternships() {
+      const query = ($('#internshipSearch')?.value || '').toLowerCase();
+      const location = $('#locationFilter')?.value || '';
+      const area = $('#areaFilter')?.value || '';
+      const mode = $('#modeFilter')?.value || '';
+
+      const filtered = internships.filter(opportunity =>
+        `${opportunity.title} ${opportunity.company} ${opportunity.area} ${opportunity.skills.join(' ')}`
+          .toLowerCase().includes(query) &&
+        (!location || opportunity.location === location) &&
+        (!area || opportunity.area === area) &&
+        (!mode || opportunity.mode === mode)
+      );
+
+      $('#resultsCount').textContent =
+        `${filtered.length} oportunidade${filtered.length === 1 ? '' : 's'} encontrada${filtered.length === 1 ? '' : 's'}`;
+
+      $('#internshipList').innerHTML = filtered.slice(0, shownCount).map(opportunityCard).join() ||
+        `<div class="card empty-state">
+          <div class="empty-icon">⌕</div>
+          <h3>Não encontrámos resultados</h3>
+          <p>Experimenta alterar os termos de pesquisa ou remover alguns filtros.</p>
+          <button class="btn btn-outline" id="clearFilters">Limpar filtros</button>
+        </div>`;
+
+      $('#loadMore').classList.toggle('hidden', shownCount >= filtered.length);
+
+      $('#clearFilters')?.addEventListener('click', () => {
+        $('#internshipSearch').value = '';
+        $('#locationFilter').value = '';
+        $('#areaFilter').value = '';
+        $('#modeFilter').value = '';
+        shownCount = 4;
+        renderInternships();
+      });
+
+      bindDetailButtons();
+    }
+
+    function showDetail(id) {
+      const opportunity = internships.find(item => item.id === Number(id));
+      if (!opportunity) return;
+
+      $('#detailContent').innerHTML = `
+        <div class="detail-hero">
+          <div class="company-logo ${opportunity.logoClass}">${opportunity.logo}</div>
+          <div style="flex:1;min-width:160px">
+            <span class="eyebrow">${opportunity.area} · ${opportunity.type}</span>
+            <h1>${opportunity.title}</h1>
+            <p>${opportunity.company} · ${opportunity.location}, Angola</p>
+            <div class="tag-row"><span class="tag green">${opportunity.salary}</span><span class="tag">${opportunity.mode}</span></div>
+          </div>
+          <button class="btn btn-primary apply-btn" data-apply="${opportunity.id}">Candidatar-me →</button>
+        </div>
+        <div class="detail-stats">
+          <span>⌖ ${opportunity.location}</span><span>◷ ${opportunity.mode}</span>
+          <span>▦ ${opportunity.duration}</span><span>Prazo: <strong style="color:#bd7b16">${opportunity.deadline}</strong></span>
+        </div>
+        <div class="detail-section"><h3>Sobre a oportunidade</h3><p>${opportunity.description}</p></div>
+        <div class="detail-section"><h3>Responsabilidades</h3><ul>${opportunity.responsibilities.map(item => `<li>${item}</li>`).join('')}</ul></div>
+        <div class="detail-section"><h3>Requisitos</h3><ul>${opportunity.requirements.map(item => `<li>${item}</li>`).join('')}</ul></div>
+        <div class="detail-section"><h3>Competências valorizadas</h3>${opportunity.skills.map(skill => `<span class="skill">${skill}</span>`).join('')}</div>
+        <div class="card" style="padding:16px;background:#f5fbf7;margin-top:24px;border-color:#d9f0e3">
+          <strong style="font-size:13px">Pronto para dar o próximo passo?</strong>
+          <p style="margin:7px 0 13px;font-size:12px;color:#6d7e8e">Revê o teu perfil e envia a tua candidatura à equipa ${opportunity.company}.</p>
+          <button class="btn btn-primary apply-btn" data-apply="${opportunity.id}">Candidatar-me a esta vaga →</button>
+        </div>`;
+
+      switchView('detail');
+      $$('[data-apply]').forEach(button => {
+        button.addEventListener('click', () => applyFor(Number(button.dataset.apply)));
+      });
+    }
+
+    function bindDetailButtons() {
+      $$('[data-detail]').forEach(button => {
+        button.onclick = () => showDetail(button.dataset.detail);
+      });
+    }
+
+    function applyFor(id) {
+      const opportunity = internships.find(item => item.id === id);
+
+      openModal(
+        'Candidatar-me',
+        `Estás prestes a enviar a tua candidatura para ${opportunity.title} na ${opportunity.company}.`,
+        `<div class="field">
+          <label for="applyNote">Mensagem para a empresa (opcional)</label>
+          <textarea id="applyNote" placeholder="Conta brevemente porque esta oportunidade te interessa..."></textarea>
+        </div>
+        <div class="field">
+          <label>Currículo anexado</label>
+          <div style="padding:13px;border:1px solid var(--line);border-radius:10px;background:#f7faf8;font-size:12px">
+            ▤ CV_Joao_Manuel.pdf <span class="tag green" style="float:right">Pronto</span>
+          </div>
+        </div>`,
+        'Enviar candidatura',
+        () => {
+          toast('Candidatura enviada com sucesso!');
+          setTimeout(() => toast(`A candidatura para ${opportunity.company} está em análise.`), 1500);
+        }
+      );
+    }
+
+    function addComment(form) {
+      const input = form.querySelector('input');
+      const value = input.value.trim();
+
+      if (!value) {
+        toast('Escreve um comentário antes de enviar.');
+        return;
+      }
+
+      const comments = form.closest('.comments');
+      const comment = document.createElement('div');
+      comment.className = 'comment';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'avatar';
+      avatar.textContent = 'JM';
+
+      const body = document.createElement('div');
+      body.className = 'comment-body';
+
+      const name = document.createElement('strong');
+      name.textContent = 'João Manuel';
+
+      const time = document.createElement('span');
+      time.className = 'comment-time';
+      time.textContent = '· agora';
+      name.append(time);
+
+      const paragraph = document.createElement('p');
+      paragraph.textContent = value;
+
+      body.append(name, paragraph);
+      comment.append(avatar, body);
+      comments.insertBefore(comment, form);
+      input.value = '';
+      toast('Comentário publicado.');
+    }
+
+    $$('.like-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const post = button.closest('.feed-post');
+        const count = post.querySelector('.likes-count');
+        const liked = button.classList.toggle('liked');
+
+        button.innerHTML = liked ? '♥ Gostaste' : '♡ Gostar';
+        count.textContent = liked
+          ? '♡ 129 gostos'
+          : (post.dataset.post === '1' ? '♡ 128 gostos' : post.dataset.post === '2' ? '♡ 86 gostos' : '♡ 64 gostos');
+      });
+    });
+
+    $$('.comment-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const comments = button.closest('.feed-post').querySelector('.comments');
+        comments.classList.toggle('hidden');
+        if (!comments.classList.contains('hidden')) comments.querySelector('input')?.focus();
+      });
+    });
+
+    $$('.comment-form').forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        addComment(form);
+      });
+    });
+
+    $$('[data-view]').forEach(button => {
+      button.addEventListener('click', () => switchView(button.dataset.view));
+    });
+
+    $('#backToInternships').onclick = () => switchView('internships');
+
+    $('#internshipSearch').addEventListener('input', () => {
+      shownCount = 6;
+      renderInternships();
+    });
+
+    ['locationFilter', 'areaFilter', 'modeFilter'].forEach(id => {
+      $('#' + id).addEventListener('change', () => {
+        shownCount = 6;
+        renderInternships();
+      });
+    });
+
+    $('#loadMore').onclick = () => {
+      shownCount += 2;
+      renderInternships();
+    };
+
+    $('#globalSearch').addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        $('#internshipSearch').value = event.target.value;
+        switchView('internships');
+      }
+    });
+
+    $('#globalSearch').addEventListener('focus', () => {
+      if (innerWidth < 760) switchView('internships');
+    });
+
+    $$('.follow-btn').forEach(button => {
+      button.onclick = () => {
+        const isFollowing = button.textContent === '✓';
+        button.textContent = isFollowing ? '＋' : '✓';
+        button.style.background = isFollowing ? '#f2fbf6' : 'var(--mint)';
+        toast(isFollowing ? 'Deixaste de seguir a empresa.' : 'Agora segues esta empresa.');
+      };
+    });
+
+    $('#suggestMore').onclick = () => toast('Mais empresas serão apresentadas em breve.');
+
+    $('#switchRole').onclick = () => {
+      role = role === 'student' ? 'company' : 'student';
+      $('#switchRole').innerHTML = `<span class="ico">⇄</span>${role === 'student' ? 'Pré-visualizar empresa' : 'Voltar à conta de estudante'}`;
+      switchView(role === 'company' ? 'company' : 'feed');
+      toast(role === 'company' ? 'Pré-visualização do espaço de empresa.' : 'Voltaste ao espaço de estudante.');
+    };
+
+    function openPublish() {
+      openModal(
+        'Publicar estágio',
+        'Apresenta uma oportunidade a jovens talentos em Angola.',
+        `<div class="field"><label for="jobTitle">Título do estágio *</label><input id="jobTitle" required placeholder="Ex.: Estágio em Desenvolvimento Web"></div>
+        <div class="field"><label for="jobArea">Área</label><select id="jobArea"><option>Tecnologia</option><option>Finanças</option><option>Marketing</option><option>Engenharia</option></select></div>
+        <div class="field"><label for="jobLocation">Localização</label><select id="jobLocation"><option>Luanda</option><option>Benguela</option><option>Huíla</option><option>Cabinda</option></select></div>
+        <div class="field"><label for="jobMode">Modalidade</label><select id="jobMode"><option>Presencial</option><option>Híbrido</option><option>Remoto</option></select></div>
+        <div class="field"><label for="jobDesc">Descrição *</label><textarea id="jobDesc" required placeholder="Descreve a oportunidade e os requisitos..."></textarea></div>`,
+        'Publicar estágio',
+        formData => toast(`Estágio “${formData.get('jobTitle')}” guardado como rascunho de demonstração.`)
+      );
+    }
+
+    $('#publishInternship').onclick = openPublish;
+
+    function openCommunityPost() {
+      openModal(
+        'Criar publicação',
+        'Partilha uma ideia, conquista profissional ou novidade com a comunidade Kandia.',
+        `<div class="field"><label for="communityPostText">A tua publicação *</label><textarea id="communityPostText" required placeholder="O que gostarias de partilhar?"></textarea></div>`,
+        'Publicar',
+        formData => {
+          const content = String(formData.get('communityPostText') || '').trim();
+          if (!content) return;
+          const post = document.createElement('article');
+          post.className = 'card feed-post';
+          post.dataset.post = 'new';
+          const head = document.createElement('div');
+          head.className = 'post-head';
+          head.innerHTML = '<div class="avatar">JM</div><div class="post-meta"><strong>João Manuel <span class="tag green" style="margin-left:5px">A tua publicação</span></strong><span>Agora · ◉ Público</span></div>';
+          const copy = document.createElement('p');
+          copy.className = 'post-copy';
+          copy.textContent = content;
+          const actions = document.createElement('div');
+          actions.className = 'post-actions';
+          actions.innerHTML = '<button class="post-action" type="button">♡ Gostar</button><button class="post-action" type="button">▢ Comentar</button>';
+          post.append(head, copy, actions);
+          $('#view-feed').prepend(post);
+          toast('A tua publicação foi adicionada ao feed de demonstração.');
+        }
+      );
+    }
+
+    $('#composerOpen').onclick = openCommunityPost;
+    $('#composerShare').onclick = openCommunityPost;
+    $('#mobilePublish').onclick = () => { switchView('feed'); openCommunityPost(); };
+    $('#composerPhoto').onclick = () => $('#composerPhotoInput').click();
+    $('#composerPhotoInput').addEventListener('change', event => {
+      const file = event.target.files && event.target.files[0];
+      if (file) toast(`Imagem selecionada: ${file.name}. Abre Publicar para adicionar uma descrição.`);
+    });
+    $('#composerOpportunity').onclick = openPublish;
+
+    $('#companyAll').onclick = () => {
+      switchView('internships');
+      toast('A explorar oportunidades publicadas.');
+    };
+
+    $$('.candidate-btn').forEach(button => {
+      button.onclick = () => openModal(
+        'Candidatos à oportunidade',
+        'Exemplo de gestão de candidatos para a equipa de recrutamento.',
+        `<div class="suggestion">
+          <div class="avatar">JM</div><div class="suggestion-info"><strong>João Manuel</strong><span>Engenharia Informática · Python, Django</span></div>
+          <select class="filter-select candidate-status"><option>Em análise</option><option>Entrevista</option><option>Seleccionado</option><option>Não seleccionado</option></select>
+        </div>
+        <div class="suggestion">
+          <div class="avatar orange">AS</div><div class="suggestion-info"><strong>Ana Sofia</strong><span>Engenharia Informática · Redes, Linux</span></div>
+          <select class="filter-select candidate-status"><option>Entrevista</option><option>Em análise</option><option>Seleccionado</option><option>Não seleccionado</option></select>
+        </div>`,
+        'Guardar estados',
+        () => toast('Estados dos candidatos actualizados.')
+      );
+    });
+
+    $('#allApplications').onclick = () => toast('Estás a ver as candidaturas mais recentes.');
+
+    $('#markRead').onclick = () => {
+      $$('#notificationList .dot').forEach(dot => dot.remove());
+      toast('Todas as notificações foram marcadas como lidas.');
+    };
+
+    $('#editProfile').onclick = $('#editBio').onclick = () => openModal(
+      'Editar perfil',
+      'Mantém as tuas informações profissionais actualizadas.',
+      `<div class="field"><label for="fullName">Nome completo</label><input id="fullName" value="João Manuel" required></div>
+      <div class="field"><label for="course">Curso</label><input id="course" value="Engenharia Informática"></div>
+      <div class="field"><label for="bio">Biografia</label><textarea id="bio">Estudante de Engenharia Informática apaixonado por desenvolvimento web e soluções digitais.</textarea></div>`,
+      'Guardar alterações',
+      formData => {
+        const name = formData.get('fullName');
+        if (name) {
+          $$('.side-profile h3')[0].textContent = name;
+          $('.profile-header h1').textContent = name;
+          toast('Perfil actualizado com sucesso.');
+        }
+      }
+    );
+
+    $('#editSkills').onclick = () => openModal(
+      'Adicionar competências',
+      'Separa as competências por vírgulas.',
+      `<div class="field"><label for="skills">Competências</label><input id="skills" placeholder="Ex.: Python, Django, SQL"></div>`,
+      'Adicionar',
+      () => toast('Competências actualizadas.')
+    );
+
+    $('#updateCV').onclick = () => openModal(
+      'Actualizar currículo',
+      'Escolhe o ficheiro de CV que pretendes associar ao teu perfil.',
+      `<div class="field"><label for="cvFile">Ficheiro PDF</label><input type="file" id="cvFile" accept=".pdf"></div>`,
+      'Guardar CV',
+      () => toast('O carregamento de ficheiros ficará disponível após integração com o servidor.')
+    );
+
+    function showAuth(mode = 'login', which = 'student') {
+      authMode = mode;
+      authRole = which;
+      $('#appShell').classList.add('hidden');
+      $('#authScreen').classList.add('active');
+      renderAuth();
+    }
+
+    function renderAuth() {
+      $('#authTitle').textContent = authMode === 'login' ? 'Bem-vindo de volta'
+        : authMode === 'register' ? 'Cria a tua conta'
+        : authMode === 'forgot' ? 'Recuperar palavra-passe'
+        : 'Define uma nova palavra-passe';
+
+      $('#authSubtitle').textContent = authMode === 'login' ? 'Entra na tua conta e continua a construir o teu caminho.'
+        : authMode === 'register' ? 'Junta-te à comunidade que liga talento a oportunidades.'
+        : authMode === 'forgot' ? 'Vamos enviar-te instruções para recuperares o acesso.'
+        : 'Escolhe uma palavra-passe segura para a tua conta.';
+
+      $('.auth-switch').classList.toggle('hidden', authMode === 'forgot' || authMode === 'reset');
+      $$('[data-role]').forEach(button => button.classList.toggle('selected', button.dataset.role === authRole));
+
+      let fields = '';
+
+      if (authMode === 'login') {
+        fields = `
+          <div class="field"><label for="authEmail">Email</label><input id="authEmail" type="email" required placeholder="nome@exemplo.com" autocomplete="email"></div>
+          <div class="field"><label for="authPassword">Palavra-passe</label><input id="authPassword" type="password" required placeholder="A tua palavra-passe" autocomplete="current-password"></div>`;
+      } else if (authMode === 'register') {
+        fields += authRole === 'student'
+          ? `<div class="field"><label for="regName">Nome completo</label><input id="regName" required placeholder="O teu nome" autocomplete="name"></div>`
+          : `<div class="field"><label for="regName">Nome da empresa</label><input id="regName" required placeholder="Nome oficial da empresa"></div>`;
+
+        fields += `<div class="field"><label for="regEmail">Email ${authRole === 'company' ? 'profissional' : ''}</label><input id="regEmail" type="email" required placeholder="nome@exemplo.com" autocomplete="email"></div>`;
+
+        fields += authRole === 'student'
+          ? `<div class="field"><label for="regInstitution">Instituição de ensino</label><input id="regInstitution" required placeholder="Ex.: Universidade Agostinho Neto"></div>`
+          : `<div class="field"><label for="regNif">NIF da empresa</label><input id="regNif" required placeholder="Número de identificação fiscal"></div>`;
+
+        fields += `<div class="field"><label for="regPassword">Criar palavra-passe</label><input id="regPassword" type="password" minlength="8" required placeholder="Mínimo de 8 caracteres" autocomplete="new-password"></div>`;
+      } else if (authMode === 'forgot') {
+        fields = `<div class="field"><label for="recoverEmail">Email associado à conta</label><input id="recoverEmail" type="email" required placeholder="nome@exemplo.com"></div>`;
+      } else {
+        fields = `
+          <div class="field"><label for="newPassword">Nova palavra-passe</label><input id="newPassword" type="password" minlength="8" required placeholder="Mínimo de 8 caracteres"></div>
+          <div class="field"><label for="confirmPassword">Confirmar palavra-passe</label><input id="confirmPassword" type="password" minlength="8" required placeholder="Repete a palavra-passe"></div>`;
+      }
+
+      $('#authFields').innerHTML = fields;
+      $('#authSubmit').textContent = authMode === 'login' ? 'Entrar na minha conta →'
+        : authMode === 'register' ? 'Criar conta →'
+        : authMode === 'forgot' ? 'Enviar instruções →'
+        : 'Guardar nova palavra-passe';
+
+      $('#authBottom').innerHTML = authMode === 'login'
+        ? 'Ainda não tens conta? <button type="button" id="switchAuth">Criar conta</button>'
+        : authMode === 'register'
+          ? 'Já tens uma conta? <button type="button" id="switchAuth">Entrar</button>'
+          : 'Lembraste-te da palavra-passe? <button type="button" id="switchAuth">Entrar</button>';
+
+      $('#switchAuth').onclick = () => {
+        authMode = authMode === 'register' ? 'login' : 'register';
+        renderAuth();
+      };
+
+      $('#forgotPassword').classList.toggle('hidden', authMode !== 'login');
+      $('#forgotPassword').onclick = () => {
+        authMode = 'forgot';
+        renderAuth();
+      };
+
+      $('#authForm').onsubmit = event => {
+        event.preventDefault();
+
+        if (authMode === 'login') {
+          toast('Demonstração: sessão iniciada.');
+          $('#authScreen').classList.remove('active');
+          $('#appShell').classList.remove('hidden');
+          switchView('feed');
+        } else if (authMode === 'register') {
+          toast('Conta de demonstração criada. Bem-vindo à Kandia!');
+          $('#authScreen').classList.remove('active');
+          $('#appShell').classList.remove('hidden');
+          switchView('feed');
+        } else if (authMode === 'forgot') {
+          toast('Se o email existir, receberás instruções de recuperação.');
+          authMode = 'reset';
+          renderAuth();
+        } else {
+          if ($('#newPassword').value !== $('#confirmPassword').value) {
+            toast('As palavras-passe não coincidem.');
+            return;
+          }
+          toast('Palavra-passe alterada. Já podes entrar.');
+          authMode = 'login';
+          renderAuth();
+        }
+      };
+    }
+
+    $$('[data-role]').forEach(button => {
+      button.onclick = () => {
+        authRole = button.dataset.role;
+        renderAuth();
+      };
+    });
+
+    $('#backToApp').onclick = () => {
+      $('#authScreen').classList.remove('active');
+      $('#appShell').classList.remove('hidden');
+    };
+
+    $('#cancelModal').onclick = closeModal;
+
+    $('#modalBackdrop').addEventListener('click', event => {
+      if (event.target.id === 'modalBackdrop') closeModal();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeModal();
+
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        $('#globalSearch').focus();
+      }
+    });
+
+    renderInternships();
+    bindDetailButtons();
+  </script>
+</body>
+</html>
